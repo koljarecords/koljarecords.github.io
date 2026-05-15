@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en" data-kolja-public="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An independent record label from São Paulo for metal, trap, acoustic sketches, experimental electronics and every project that refuses to wait for permission.">
+  <meta name="kolja-content-hash" content="KR-B240E74F">
+  <title>Kölja Records — Music. Freedom. Forever.</title>
+  <style>
+    :root{--ink:#12110f;--paper:#f4ecdd;--cream:#fff8ea;--muted:#635b51;--line:rgba(18,17,15,.18);--accent:#c83d32;--green:#465f4a;--blue:#285b78;--radius:8px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color-scheme:light}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:linear-gradient(90deg,rgba(18,17,15,.04) 1px,transparent 1px) 0 0/42px 42px,var(--paper)}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+    .nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px;padding:14px clamp(18px,5vw,72px);border-bottom:1px solid var(--line);background:rgba(244,236,221,.92);backdrop-filter:blur(16px)}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}.mark{display:grid;place-items:center;width:44px;height:44px;background:var(--ink);color:var(--cream);font-family:Georgia,serif;font-size:24px}.brand b,.brand span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand b{font-size:14px;letter-spacing:.08em;text-transform:uppercase}.brand span{margin-top:2px;color:var(--muted);font-size:13px}.navlinks{display:flex;gap:8px}.navlinks a{min-height:38px;display:inline-flex;align-items:center;padding:0 12px;border-radius:999px;font-size:13px;font-weight:850}.navlinks a:hover{background:rgba(18,17,15,.07)}
+    .ticker{display:flex;gap:30px;overflow:hidden;padding:10px clamp(18px,5vw,72px);background:var(--ink);color:var(--cream);font-size:12px;font-weight:950;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}.ticker span::after{content:"";display:inline-block;width:5px;height:5px;margin-left:30px;border-radius:50%;background:var(--accent);vertical-align:middle}
+    .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,560px);gap:clamp(28px,6vw,82px);min-height:calc(100vh - 108px);padding:clamp(52px,7vw,96px) clamp(18px,5vw,72px) 52px;border-bottom:1px solid var(--line)}
+    .eyebrow{display:inline-flex;align-items:center;gap:12px;margin-bottom:20px;color:var(--muted);font-size:12px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}.eyebrow:before{content:"";width:42px;height:2px;background:var(--accent)}
+    h1,h2,h3,p{margin:0}h1{max-width:920px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(62px,8vw,132px);line-height:.82;letter-spacing:0}h1 span{color:var(--accent);font-style:italic}.lead{max-width:700px;margin-top:26px;color:#342f2a;font-size:clamp(18px,2.1vw,24px);line-height:1.45}.cue{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.cue span,.chip{display:inline-flex;align-items:center;min-height:30px;padding:0 10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,248,234,.72);color:#403930;font-size:12px;font-weight:850}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.button{display:inline-flex;min-height:44px;align-items:center;justify-content:center;padding:0 15px;border-radius:var(--radius);border:1px solid var(--ink);font-size:13px;font-weight:900}.button.dark{background:var(--ink);color:var(--cream)}
+    .hero-stack{display:grid;gap:12px;align-self:center}.cover-wall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:8px;border:1px solid rgba(255,248,234,.2);border-radius:var(--radius);background:var(--ink);box-shadow:0 22px 70px rgba(18,17,15,.22)}.cover-tile{position:relative;min-height:86px;overflow:hidden;border-radius:4px;background:#050505}.cover-tile.large{grid-column:span 2;grid-row:span 2}.cover-tile img,.generated-cover{width:100%;height:100%;object-fit:cover}.cover-tile span{position:absolute;left:8px;bottom:8px;max-width:calc(100% - 16px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:4px 7px;border-radius:999px;background:rgba(18,17,15,.86);color:var(--cream);font-size:10px;font-weight:950;letter-spacing:.07em}
+    .featured{overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--cream);box-shadow:0 20px 58px rgba(18,17,15,.16)}.featured-media{position:relative;aspect-ratio:16/10;background:var(--ink)}.featured-media img{width:100%;height:100%;object-fit:cover}.badge{position:absolute;top:12px;left:12px;min-height:30px;display:inline-flex;align-items:center;padding:0 10px;border-radius:999px;background:var(--ink);color:var(--cream);font-size:11px;font-weight:950;letter-spacing:.08em;text-transform:uppercase}.featured-body{padding:22px}.kicker{color:var(--accent);font-size:12px;font-weight:950;letter-spacing:.12em;text-transform:uppercase}.featured h2{margin-top:8px;font-family:Georgia,serif;font-size:clamp(36px,5vw,58px);line-height:.95}.featured p{margin-top:14px;color:#403930;font-size:17px;line-height:1.45}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:34px;max-width:760px}.stat{min-height:96px;padding:16px;border:1px solid var(--line);background:rgba(255,248,234,.58)}.stat b{display:block;font-family:Georgia,serif;font-size:32px;line-height:1}.stat span{display:block;margin-top:9px;color:var(--muted);font-size:12px;font-weight:950;letter-spacing:.08em;text-transform:uppercase}
+    .section{padding:clamp(46px,7vw,92px) clamp(18px,5vw,72px);border-bottom:1px solid var(--line)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}.section h2{max-width:780px;font-family:Georgia,serif;font-size:clamp(42px,7vw,88px);line-height:.9}.note{max-width:480px;color:var(--muted);font-size:16px;line-height:1.5}.genre-strip{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}button.chip{font:inherit;cursor:pointer}.chip.active{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{display:flex;min-height:100%;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--cream)}.card[hidden]{display:none}.card-cover{position:relative;aspect-ratio:1/.72;background:var(--ink)}.card-cover img{width:100%;height:100%;object-fit:cover}.media-frame{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--ink)}.audio-player{position:absolute;inset:0;display:grid;align-content:center;gap:12px;padding:18px;background:var(--ink);color:var(--cream)}.audio-player strong{font-family:Georgia,serif;font-size:20px;line-height:1.1}.audio-player audio{width:100%}.card-body{display:flex;flex:1;flex-direction:column;padding:15px}.row{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px;font-weight:900;letter-spacing:.05em;text-transform:uppercase}.card h3{margin-top:11px;font-family:Georgia,serif;font-size:28px;line-height:1}.card p{margin-top:10px;color:#403930;font-size:14px;line-height:1.45}.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:16px}.mini{display:inline-flex;min-height:34px;align-items:center;padding:0 10px;border:1px solid var(--line);border-radius:var(--radius);background:transparent;color:inherit;font:inherit;font-size:12px;font-weight:900;cursor:pointer}
+    .posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.post{min-height:260px;padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--cream)}.post img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px;margin-bottom:14px}.post h3{margin-top:13px;font-family:Georgia,serif;font-size:31px;line-height:1}.post p{margin-top:13px;color:#403930;line-height:1.52}
+    .about{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:14px}.panel{padding:clamp(22px,4vw,38px);border:1px solid var(--line);border-radius:var(--radius);background:var(--cream)}.panel p{color:#403930;font-size:clamp(18px,2vw,22px);line-height:1.55}.panel p+p{margin-top:18px}.metric{padding:22px;border:1px solid var(--line);border-radius:var(--radius);background:var(--cream)}.metric+.metric{margin-top:14px}.metric b{display:block;font-family:Georgia,serif;font-size:clamp(24px,2.5vw,38px);line-height:1.05;overflow-wrap:anywhere}.metric span{display:block;margin-top:9px;color:var(--muted);font-size:12px;font-weight:950;letter-spacing:.08em;text-transform:uppercase}.footer{display:flex;justify-content:space-between;gap:20px;padding:30px clamp(18px,5vw,72px);color:var(--muted);font-size:13px}
+    @media(min-width:1121px) and (max-width:1280px){h1{font-size:clamp(62px,6.8vw,96px)}}@media(max-width:1120px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.posts{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-stack{max-width:720px}}@media(max-width:760px){.nav{align-items:stretch;flex-direction:column}.navlinks{overflow:auto}.hero{padding-top:34px}.stats,.about,.posts,.grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}h1{font-size:clamp(52px,18vw,88px)}.footer{flex-direction:column}}</style>
+</head>
+<body>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Kölja Records home"><span class="mark">K</span><span><b>Kölja Records</b><span>São Paulo, Brazil · Est. 2026</span></span></a>
+    <nav class="navlinks" aria-label="Main navigation"><a href="#catalog">Catalog</a><a href="#posts">Posts</a><a href="#about">About</a></nav>
+  </header>
+  <div class="ticker" aria-hidden="true"><span>Music. Freedom. Forever.</span><span>KR-KOL / 01</span><span>Metal · Instrumental · Demo · Folk · Single</span></div>
+  <main>
+    <section class="hero" id="top">
+      <div>
+        <div class="eyebrow">Kölja Records · Independent Record Label</div>
+        <h1>Music. <span>Freedom.</span> Forever.</h1>
+        <p class="lead">An independent record label from São Paulo for metal, trap, acoustic sketches, experimental electronics and every project that refuses to wait for permission.</p>
+        <div class="cue"><span>Limited catalog</span><span>São Paulo sessions</span><span>Independent forever</span></div>
+        <div class="hero-actions"><a class="button dark" href="#catalog">Browse Catalog</a><a class="button" href="#about">Label Notes</a></div>
+        <div class="stats"><div class="stat"><b>19</b><span>Recordings</span></div><div class="stat"><b>6</b><span>Projects</span></div><div class="stat"><b>2026</b><span>Founded</span></div></div>
+      </div>
+      <div class="hero-stack"><div class="cover-wall"><div class="cover-tile large"><img src="https://i.ytimg.com/vi/OGAeGom10KY/hqdefault.jpg" alt="Push It cover"><span>KR-OSC / 01</span></div><div class="cover-tile "><img src="https://i.ytimg.com/vi/koUQryrxqrk/hqdefault.jpg" alt="Break cover"><span>KR-OSC / 02</span></div><div class="cover-tile "><img src="https://i.ytimg.com/vi/xqxQ5IadDpY/hqdefault.jpg" alt="Hammerfall cover"><span>KR-KOL / 01</span></div><div class="cover-tile "><img src="https://i.ytimg.com/vi/GmMP7IqZLj0/hqdefault.jpg" alt="BURN! cover"><span>KR-KOL / 02</span></div><div class="cover-tile "><img src="https://i.ytimg.com/vi/A5YZZgrpbbk/hqdefault.jpg" alt="Mastermind cover"><span>KR-OZ / 01</span></div><div class="cover-tile "><img src="https://i.ytimg.com/vi/zfY__Q774bM/hqdefault.jpg" alt="Continuous Progression cover"><span>KR-KOL / 03</span></div><div class="cover-tile "><img src="https://i.ytimg.com/vi/DG5HLkKvcME/hqdefault.jpg" alt="Walter cover"><span>KR-OSC / 03</span></div><div class="cover-tile "><img src="https://i.ytimg.com/vi/Q6x_J3MQnuU/hqdefault.jpg" alt="Ghosts cover"><span>KR-OZ / 02</span></div></div><article class="featured"><div class="featured-media"><img src="https://i.ytimg.com/vi/xqxQ5IadDpY/hqdefault.jpg" alt="Kölja — Hammerfall"><span class="badge">video · Now pressing</span></div><div class="featured-body"><div class="kicker">KR-KOL / 01</div><h2>Hammerfall</h2><div class="chips"><span class="chip">Kölja</span><span class="chip">Hammerfall</span><span class="chip">Produced by Kölja</span></div><p>Founder-led metal with folk edges, direct writing and a catalog-defining hook.</p><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=xqxQ5IadDpY" data-video-id="xqxQ5IadDpY" data-media-title="Kölja — Hammerfall">Watch</button></div></div></article></div>
+    </section>
+    <section class="section" id="catalog">
+      <div class="section-head"><h2>Catalog of Recordings</h2><p class="note">Singles, demos, aliases and sessions from the label archive.</p></div>
+      <div class="genre-strip" role="group" aria-label="Genre filters"><button class="chip active" type="button" data-filter-genre="All" aria-pressed="true">All 19</button><button class="chip" type="button" data-filter-genre="Metal" aria-pressed="false">Metal 11</button><button class="chip" type="button" data-filter-genre="Instrumental" aria-pressed="false">Instrumental 6</button><button class="chip" type="button" data-filter-genre="Demo" aria-pressed="false">Demo 7</button><button class="chip" type="button" data-filter-genre="Folk" aria-pressed="false">Folk 2</button><button class="chip" type="button" data-filter-genre="Single" aria-pressed="false">Single 13</button><button class="chip" type="button" data-filter-genre="Trap" aria-pressed="false">Trap 2</button><button class="chip" type="button" data-filter-genre="Experimental" aria-pressed="false">Experimental 7</button><button class="chip" type="button" data-filter-genre="Hip-Hop" aria-pressed="false">Hip-Hop 1</button><button class="chip" type="button" data-filter-genre="Melodic" aria-pressed="false">Melodic 1</button><button class="chip" type="button" data-filter-genre="Death Metal" aria-pressed="false">Death Metal 1</button><button class="chip" type="button" data-filter-genre="Cover" aria-pressed="false">Cover 1</button><button class="chip" type="button" data-filter-genre="Industrial" aria-pressed="false">Industrial 1</button><button class="chip" type="button" data-filter-genre="Acoustic" aria-pressed="false">Acoustic 1</button></div>
+      <div class="grid" data-release-grid><article class="card" data-release-card data-genres="Metal|Instrumental|Demo"><div class="card-cover"><img src="https://i.ytimg.com/vi/OGAeGom10KY/hqdefault.jpg" alt="Oscillator — Push It"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 001</span><span>KR-OSC / 01</span></div><h3>Push It</h3><p>Oscillator · Push It</p><p>A metal instrumental demo built around pressure, repetition and a dry rhythm section.</p><div class="chips"><span class="chip">Metal</span><span class="chip">Instrumental</span><span class="chip">Demo</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=OGAeGom10KY" data-video-id="OGAeGom10KY" data-media-title="Oscillator — Push It">Watch</button></div></div></article><article class="card" data-release-card data-genres="Metal|Instrumental|Demo"><div class="card-cover"><img src="https://i.ytimg.com/vi/koUQryrxqrk/hqdefault.jpg" alt="Oscillator — Break"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 002</span><span>KR-OSC / 02</span></div><h3>Break</h3><p>Oscillator · Break</p><p>A hard instrumental sketch with the compact shape of a single and the texture of a session note.</p><div class="chips"><span class="chip">Metal</span><span class="chip">Instrumental</span><span class="chip">Demo</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=koUQryrxqrk" data-video-id="koUQryrxqrk" data-media-title="Oscillator — Break">Watch</button></div></div></article><article class="card" data-release-card data-genres="Metal|Folk|Single"><div class="card-cover"><img src="https://i.ytimg.com/vi/xqxQ5IadDpY/hqdefault.jpg" alt="Kölja — Hammerfall"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 003</span><span>KR-KOL / 01</span></div><h3>Hammerfall</h3><p>Kölja · Hammerfall</p><p>Founder-led metal with folk edges, direct writing and a catalog-defining hook.</p><div class="chips"><span class="chip">Metal</span><span class="chip">Folk</span><span class="chip">Single</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=xqxQ5IadDpY" data-video-id="xqxQ5IadDpY" data-media-title="Kölja — Hammerfall">Watch</button></div></div></article><article class="card" data-release-card data-genres="Metal|Single"><div class="card-cover"><img src="https://i.ytimg.com/vi/GmMP7IqZLj0/hqdefault.jpg" alt="Kölja — BURN!"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 004</span><span>KR-KOL / 02</span></div><h3>BURN!</h3><p>Kölja · BURN!</p><p>Metal at full volume, kept lean and direct.</p><div class="chips"><span class="chip">Metal</span><span class="chip">Single</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=GmMP7IqZLj0" data-video-id="GmMP7IqZLj0" data-media-title="Kölja — BURN!">Watch</button></div></div></article><article class="card" data-release-card data-genres="Trap|Experimental|Single"><div class="card-cover"><img src="https://i.ytimg.com/vi/A5YZZgrpbbk/hqdefault.jpg" alt="O.Z ft. BOP — Mastermind"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 005</span><span>KR-OZ / 01</span></div><h3>Mastermind</h3><p>O.Z ft. BOP · Death Jack</p><p>Trap and experimental production pushed into a darker, deliberate shape.</p><div class="chips"><span class="chip">Trap</span><span class="chip">Experimental</span><span class="chip">Single</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=A5YZZgrpbbk" data-video-id="A5YZZgrpbbk" data-media-title="O.Z ft. BOP — Mastermind">Watch</button></div></div></article><article class="card" data-release-card data-genres="Metal|Instrumental"><div class="card-cover"><img src="https://i.ytimg.com/vi/zfY__Q774bM/hqdefault.jpg" alt="Kölja — Continuous Progression"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 006</span><span>KR-KOL / 03</span></div><h3>Continuous Progression</h3><p>Kölja · Continuous Progression</p><p>A focused instrumental run with a progressive metal spine.</p><div class="chips"><span class="chip">Metal</span><span class="chip">Instrumental</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=zfY__Q774bM" data-video-id="zfY__Q774bM" data-media-title="Kölja — Continuous Progression">Watch</button></div></div></article><article class="card" data-release-card data-genres="Metal|Single"><div class="card-cover"><img src="https://i.ytimg.com/vi/DG5HLkKvcME/hqdefault.jpg" alt="Oscillator — Walter"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 007</span><span>KR-OSC / 03</span></div><h3>Walter</h3><p>Oscillator · Walter</p><p>Heavy instrumentals with a single-minded grip and no filler.</p><div class="chips"><span class="chip">Metal</span><span class="chip">Single</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=DG5HLkKvcME" data-video-id="DG5HLkKvcME" data-media-title="Oscillator — Walter">Watch</button></div></div></article><article class="card" data-release-card data-genres="Trap|Experimental|Single"><div class="card-cover"><img src="https://i.ytimg.com/vi/Q6x_J3MQnuU/hqdefault.jpg" alt="O.Z — Ghosts"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 008</span><span>KR-OZ / 02</span></div><h3>Ghosts</h3><p>O.Z · Death Jack</p><p>A trap single that stays tense, strange and deliberate.</p><div class="chips"><span class="chip">Trap</span><span class="chip">Experimental</span><span class="chip">Single</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=Q6x_J3MQnuU" data-video-id="Q6x_J3MQnuU" data-media-title="O.Z — Ghosts">Watch</button></div></div></article><article class="card" data-release-card data-genres="Hip-Hop|Experimental"><div class="card-cover"><img src="https://i.ytimg.com/vi/XtA_98WAhuo/hqdefault.jpg" alt="O.Z — Pig"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 009</span><span>KR-OZ / 03</span></div><h3>Pig</h3><p>O.Z · Pig</p><p>Hip-hop shaped by experimental texture and blunt pacing.</p><div class="chips"><span class="chip">Hip-Hop</span><span class="chip">Experimental</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=XtA_98WAhuo" data-video-id="XtA_98WAhuo" data-media-title="O.Z — Pig">Watch</button></div></div></article><article class="card" data-release-card data-genres="Metal|Melodic|Instrumental|Single"><div class="card-cover"><img src="https://i.ytimg.com/vi/2O6iVBwnjs4/hqdefault.jpg" alt="Oscillator — Death Sea"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 010</span><span>KR-OSC / 04</span></div><h3>Death Sea</h3><p>Oscillator · Death Sea</p><p>Melodic metal instrumental with a wide, cinematic pull.</p><div class="chips"><span class="chip">Metal</span><span class="chip">Melodic</span><span class="chip">Instrumental</span><span class="chip">Single</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=2O6iVBwnjs4" data-video-id="2O6iVBwnjs4" data-media-title="Oscillator — Death Sea">Watch</button></div></div></article><article class="card" data-release-card data-genres="Death Metal|Single"><div class="card-cover"><img src="https://i.ytimg.com/vi/qrzESphn3LE/hqdefault.jpg" alt="Mawsomdrakking — Cannibal"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 011</span><span>KR-MAW / 01</span></div><h3>Cannibal</h3><p>Mawsomdrakking · Cannibal</p><p>Death metal with explicit edges and a direct, abrasive performance.</p><div class="chips"><span class="chip">Death Metal</span><span class="chip">Single</span><span class="chip">Explicit</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=qrzESphn3LE" data-video-id="qrzESphn3LE" data-media-title="Mawsomdrakking — Cannibal">Watch</button></div></div></article><article class="card" data-release-card data-genres="Metal|Single"><div class="card-cover"><img src="https://i.ytimg.com/vi/voueU7xzaKA/hqdefault.jpg" alt="Mawsomdrakking ft. FourtyWasters — Dead By Design"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 012</span><span>KR-MAW / 02</span></div><h3>Dead By Design</h3><p>Mawsomdrakking ft. FourtyWasters · Dead By Design</p><p>Death-adjacent metal with a collaborative credit and a locked-in theme.</p><div class="chips"><span class="chip">Metal</span><span class="chip">Single</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=voueU7xzaKA" data-video-id="voueU7xzaKA" data-media-title="Mawsomdrakking ft. FourtyWasters — Dead By Design">Watch</button></div></div></article><article class="card" data-release-card data-genres="Experimental|Single"><div class="card-cover"><img src="https://i.ytimg.com/vi/b_YLZzWeoZM/hqdefault.jpg" alt="Oscillator — Cult The Dead"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 013</span><span>KR-OSC / 05</span></div><h3>Cult The Dead</h3><p>Oscillator · Cult The Dead</p><p>A compact experimental single with a harder label edge.</p><div class="chips"><span class="chip">Experimental</span><span class="chip">Single</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=b_YLZzWeoZM" data-video-id="b_YLZzWeoZM" data-media-title="Oscillator — Cult The Dead">Watch</button></div></div></article><article class="card" data-release-card data-genres="Metal|Experimental|Single|Cover"><div class="card-cover"><img src="https://i.ytimg.com/vi/fEjjSUxQV_4/hqdefault.jpg" alt="Oscillator — Smooth Criminal"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 014</span><span>KR-OSC / 06</span></div><h3>Smooth Criminal</h3><p>Oscillator · Smooth Criminal</p><p>A metal and experimental cover entry, filed as a single.</p><div class="chips"><span class="chip">Metal</span><span class="chip">Experimental</span><span class="chip">Single</span><span class="chip">Cover</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=fEjjSUxQV_4" data-video-id="fEjjSUxQV_4" data-media-title="Oscillator — Smooth Criminal">Watch</button></div></div></article><article class="card" data-release-card data-genres="Metal|Industrial|Instrumental|Demo"><div class="card-cover"><img src="https://i.ytimg.com/vi/HdiH-cpbleE/hqdefault.jpg" alt="Oscillator — G.T.F.O"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 015</span><span>KR-OSC / 07</span></div><h3>G.T.F.O</h3><p>Oscillator · G.T.F.O</p><p>Industrial metal instrumentation in demo form.</p><div class="chips"><span class="chip">Metal</span><span class="chip">Industrial</span><span class="chip">Instrumental</span><span class="chip">Demo</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=HdiH-cpbleE" data-video-id="HdiH-cpbleE" data-media-title="Oscillator — G.T.F.O">Watch</button></div></div></article><article class="card" data-release-card data-genres="Acoustic|Folk|Demo|Single"><div class="card-cover"><img src="https://i.ytimg.com/vi/djJ4DpXkC1E/hqdefault.jpg" alt="Kölja — Hammerfall (Acoustic)"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 016</span><span>KR-KOL / 04</span></div><h3>Hammerfall (Acoustic)</h3><p>Kölja · Hammerfall Acoustic</p><p>The same song stripped bare into an acoustic and folk demo.</p><div class="chips"><span class="chip">Acoustic</span><span class="chip">Folk</span><span class="chip">Demo</span><span class="chip">Single</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=djJ4DpXkC1E" data-video-id="djJ4DpXkC1E" data-media-title="Kölja — Hammerfall (Acoustic)">Watch</button></div></div></article><article class="card" data-release-card data-genres="Metal|Instrumental|Demo"><div class="card-cover"><img src="https://i.ytimg.com/vi/qrxRFZHVUi0/hqdefault.jpg" alt="Oscillator — Untitled Demo Track"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 017</span><span>KR-OSC / 08</span></div><h3>Untitled Demo Track</h3><p>Oscillator · Untitled Demo Track</p><p>A metal instrumental demo kept intentionally raw.</p><div class="chips"><span class="chip">Metal</span><span class="chip">Instrumental</span><span class="chip">Demo</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=qrxRFZHVUi0" data-video-id="qrxRFZHVUi0" data-media-title="Oscillator — Untitled Demo Track">Watch</button></div></div></article><article class="card" data-release-card data-genres="Experimental|Demo|Single"><div class="card-cover"><img src="https://i.ytimg.com/vi/i7XT96PYMW0/hqdefault.jpg" alt="Des Maya — Headless"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 018</span><span>KR-DM / 01</span></div><h3>Headless</h3><p>Des Maya · Headless</p><p>Short, sharp and experimental, with demo energy and final-cut confidence.</p><div class="chips"><span class="chip">Experimental</span><span class="chip">Demo</span><span class="chip">Single</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=i7XT96PYMW0" data-video-id="i7XT96PYMW0" data-media-title="Des Maya — Headless">Watch</button></div></div></article><article class="card" data-release-card data-genres="Experimental|Single|Demo"><div class="card-cover"><img src="https://i.ytimg.com/vi/UQ8yATeTuIo/hqdefault.jpg" alt="MonicaTron — The March To Infinity"><span class="badge">video</span></div><div class="card-body"><div class="row"><span>No 019</span><span>KR-MON / 01</span></div><h3>The March To Infinity</h3><p>MonicaTron · The March To Infinity</p><p>Experimental electronics with scale, repetition and a sense of movement.</p><div class="chips"><span class="chip">Experimental</span><span class="chip">Single</span><span class="chip">Demo</span></div><div class="links"><button class="mini" type="button" data-play-media data-media-type="video" data-media-url="https://www.youtube.com/watch?v=UQ8yATeTuIo" data-video-id="UQ8yATeTuIo" data-media-title="MonicaTron — The March To Infinity">Watch</button></div></div></article></div>
+    </section>
+    <section class="section" id="posts">
+      <div class="section-head"><h2>Posts</h2><p class="note">Release notes and label updates.</p></div>
+      <div class="posts"><article class="post"><div class="chips"><span class="chip">Operations</span><span class="chip">2026-05-15</span></div><h3>Catalog source is now structured</h3><p>The catalog now lives in structured release entries, which keeps titles, covers, genres and release notes consistent when the website is exported.</p></article><article class="post"><div class="chips"><span class="chip">Catalog</span><span class="chip">2026-05-15</span></div><h3>KR-001 through KR-019 are on file</h3><p>The first nineteen recordings from the existing portfolio were moved into structured release entries with media URLs, genres, producer fields and label metadata.</p></article></div>
+    </section>
+    <section class="section" id="about">
+      <div class="section-head"><h2>Label Notes</h2><p class="note">Music. Freedom. Forever.</p></div>
+      <div class="about"><div class="panel"><p>Kölja Records was started in 2026 in São Paulo by a producer who got tired of waiting for permission. The catalog is intentionally personal: aliases, side projects, demos, singles and full-volume experiments kept under one roof.</p><p>Every release is hand-tagged, numbered and kept in one editable source of truth. When the catalog changes, the site and the offline editor change together.</p></div><div><div class="metric"><b>Kölja Records</b><span>Record label</span></div><div class="metric"><b>São Paulo, Brazil</b><span>Base</span></div><div class="metric"><b>contato@kolja.com.br</b><span>Contact</span></div></div></div>
+    </section>
+  </main>
+  <footer class="footer"><span>© 2026 Kölja Records</span><span>Music. Freedom. Forever. · KR-B240E74F</span></footer>
+<script type="application/json" id="kolja-public-data">{
+  "schema": "kolja-records-studio-v1",
+  "meta": {
+    "toolVersion": "1.0.0",
+    "createdFrom": [
+      "Kölja Records — Music. Freedom. Forever..html",
+      "Kölja Records — Portfolio · Catalog of Recordings.html"
+    ],
+    "lastExportedAt": "2026-05-15T19:40:54.052Z",
+    "contentHash": "KR-B240E74F"
+  },
+  "label": {
+    "name": "Kölja Records",
+    "mark": "K",
+    "tagline": "Music. Freedom. Forever.",
+    "heroTitle": "Music. Freedom. Forever.",
+    "intro": "An independent record label from São Paulo for metal, trap, acoustic sketches, experimental electronics and every project that refuses to wait for permission.",
+    "location": "São Paulo, Brazil",
+    "founded": "2026",
+    "recordLabel": "Kölja Records",
+    "contact": "contato@kolja.com.br",
+    "about": [
+      "Kölja Records was started in 2026 in São Paulo by a producer who got tired of waiting for permission. The catalog is intentionally personal: aliases, side projects, demos, singles and full-volume experiments kept under one roof.",
+      "Every release is hand-tagged, numbered and kept in one editable source of truth. When the catalog changes, the site and the offline editor change together."
+    ],
+    "links": {
+      "youtube": "https://www.youtube.com/@Koljarecords",
+      "bandcamp": "",
+      "instagram": "https://instagram.com/koljarecords"
+    }
+  },
+  "settings": {
+    "theme": "afterhours",
+    "accent": "#c83d32",
+    "heroReleaseId": "kr-kol-01",
+    "density": "editorial"
+  },
+  "genres": [
+    "Metal",
+    "Instrumental",
+    "Demo",
+    "Folk",
+    "Single",
+    "Trap",
+    "Experimental",
+    "Hip-Hop",
+    "Melodic",
+    "Death Metal",
+    "Cover",
+    "Industrial",
+    "Acoustic"
+  ],
+  "posts": [
+    {
+      "published": true,
+      "imageUrl": "",
+      "id": "post-001",
+      "date": "2026-05-15",
+      "title": "Catalog source is now structured",
+      "kicker": "Operations",
+      "body": "The catalog now lives in structured release entries, which keeps titles, covers, genres and release notes consistent when the website is exported."
+    },
+    {
+      "published": true,
+      "imageUrl": "",
+      "id": "post-002",
+      "date": "2026-05-15",
+      "title": "KR-001 through KR-019 are on file",
+      "kicker": "Catalog",
+      "body": "The first nineteen recordings from the existing portfolio were moved into structured release entries with media URLs, genres, producer fields and label metadata."
+    }
+  ],
+  "releases": [
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": false,
+      "advisory": false,
+      "id": "kr-osc-01",
+      "number": "001",
+      "catalog": "KR-OSC / 01",
+      "title": "Push It",
+      "artist": "Oscillator",
+      "albumName": "Push It",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Metal",
+        "Instrumental",
+        "Demo"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=OGAeGom10KY",
+      "coverUrl": "https://i.ytimg.com/vi/OGAeGom10KY/hqdefault.jpg",
+      "releaseDate": "2024-01-01",
+      "description": "A metal instrumental demo built around pressure, repetition and a dry rhythm section."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": false,
+      "advisory": false,
+      "id": "kr-osc-02",
+      "number": "002",
+      "catalog": "KR-OSC / 02",
+      "title": "Break",
+      "artist": "Oscillator",
+      "albumName": "Break",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Metal",
+        "Instrumental",
+        "Demo"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=koUQryrxqrk",
+      "coverUrl": "https://i.ytimg.com/vi/koUQryrxqrk/hqdefault.jpg",
+      "releaseDate": "2024-01-02",
+      "description": "A hard instrumental sketch with the compact shape of a single and the texture of a session note."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": true,
+      "advisory": false,
+      "id": "kr-kol-01",
+      "number": "003",
+      "catalog": "KR-KOL / 01",
+      "title": "Hammerfall",
+      "artist": "Kölja",
+      "albumName": "Hammerfall",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Metal",
+        "Folk",
+        "Single"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=xqxQ5IadDpY",
+      "coverUrl": "https://i.ytimg.com/vi/xqxQ5IadDpY/hqdefault.jpg",
+      "releaseDate": "2024-01-03",
+      "description": "Founder-led metal with folk edges, direct writing and a catalog-defining hook."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": true,
+      "advisory": false,
+      "id": "kr-kol-02",
+      "number": "004",
+      "catalog": "KR-KOL / 02",
+      "title": "BURN!",
+      "artist": "Kölja",
+      "albumName": "BURN!",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Metal",
+        "Single"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=GmMP7IqZLj0",
+      "coverUrl": "https://i.ytimg.com/vi/GmMP7IqZLj0/hqdefault.jpg",
+      "releaseDate": "2024-01-04",
+      "description": "Metal at full volume, kept lean and direct."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": false,
+      "advisory": false,
+      "id": "kr-oz-01",
+      "number": "005",
+      "catalog": "KR-OZ / 01",
+      "title": "Mastermind",
+      "artist": "O.Z ft. BOP",
+      "albumName": "Death Jack",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Trap",
+        "Experimental",
+        "Single"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=A5YZZgrpbbk",
+      "coverUrl": "https://i.ytimg.com/vi/A5YZZgrpbbk/hqdefault.jpg",
+      "releaseDate": "2024-01-05",
+      "description": "Trap and experimental production pushed into a darker, deliberate shape."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": false,
+      "advisory": false,
+      "id": "kr-kol-03",
+      "number": "006",
+      "catalog": "KR-KOL / 03",
+      "title": "Continuous Progression",
+      "artist": "Kölja",
+      "albumName": "Continuous Progression",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Metal",
+        "Instrumental"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=zfY__Q774bM",
+      "coverUrl": "https://i.ytimg.com/vi/zfY__Q774bM/hqdefault.jpg",
+      "releaseDate": "2024-01-06",
+      "description": "A focused instrumental run with a progressive metal spine."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": true,
+      "advisory": false,
+      "id": "kr-osc-03",
+      "number": "007",
+      "catalog": "KR-OSC / 03",
+      "title": "Walter",
+      "artist": "Oscillator",
+      "albumName": "Walter",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Metal",
+        "Single"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=DG5HLkKvcME",
+      "coverUrl": "https://i.ytimg.com/vi/DG5HLkKvcME/hqdefault.jpg",
+      "releaseDate": "2024-01-07",
+      "description": "Heavy instrumentals with a single-minded grip and no filler."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": true,
+      "advisory": false,
+      "id": "kr-oz-02",
+      "number": "008",
+      "catalog": "KR-OZ / 02",
+      "title": "Ghosts",
+      "artist": "O.Z",
+      "albumName": "Death Jack",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Trap",
+        "Experimental",
+        "Single"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=Q6x_J3MQnuU",
+      "coverUrl": "https://i.ytimg.com/vi/Q6x_J3MQnuU/hqdefault.jpg",
+      "releaseDate": "2024-01-08",
+      "description": "A trap single that stays tense, strange and deliberate."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": false,
+      "advisory": false,
+      "id": "kr-oz-03",
+      "number": "009",
+      "catalog": "KR-OZ / 03",
+      "title": "Pig",
+      "artist": "O.Z",
+      "albumName": "Pig",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Hip-Hop",
+        "Experimental"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=XtA_98WAhuo",
+      "coverUrl": "https://i.ytimg.com/vi/XtA_98WAhuo/hqdefault.jpg",
+      "releaseDate": "2024-01-09",
+      "description": "Hip-hop shaped by experimental texture and blunt pacing."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": false,
+      "advisory": false,
+      "id": "kr-osc-04",
+      "number": "010",
+      "catalog": "KR-OSC / 04",
+      "title": "Death Sea",
+      "artist": "Oscillator",
+      "albumName": "Death Sea",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Metal",
+        "Melodic",
+        "Instrumental",
+        "Single"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=2O6iVBwnjs4",
+      "coverUrl": "https://i.ytimg.com/vi/2O6iVBwnjs4/hqdefault.jpg",
+      "releaseDate": "2024-01-10",
+      "description": "Melodic metal instrumental with a wide, cinematic pull."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": false,
+      "advisory": true,
+      "id": "kr-maw-01",
+      "number": "011",
+      "catalog": "KR-MAW / 01",
+      "title": "Cannibal",
+      "artist": "Mawsomdrakking",
+      "albumName": "Cannibal",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Death Metal",
+        "Single"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=qrzESphn3LE",
+      "coverUrl": "https://i.ytimg.com/vi/qrzESphn3LE/hqdefault.jpg",
+      "releaseDate": "2024-01-11",
+      "description": "Death metal with explicit edges and a direct, abrasive performance."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": true,
+      "advisory": false,
+      "id": "kr-maw-02",
+      "number": "012",
+      "catalog": "KR-MAW / 02",
+      "title": "Dead By Design",
+      "artist": "Mawsomdrakking ft. FourtyWasters",
+      "albumName": "Dead By Design",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Metal",
+        "Single"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=voueU7xzaKA",
+      "coverUrl": "https://i.ytimg.com/vi/voueU7xzaKA/hqdefault.jpg",
+      "releaseDate": "2024-01-12",
+      "description": "Death-adjacent metal with a collaborative credit and a locked-in theme."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": false,
+      "advisory": false,
+      "id": "kr-osc-05",
+      "number": "013",
+      "catalog": "KR-OSC / 05",
+      "title": "Cult The Dead",
+      "artist": "Oscillator",
+      "albumName": "Cult The Dead",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Experimental",
+        "Single"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=b_YLZzWeoZM",
+      "coverUrl": "https://i.ytimg.com/vi/b_YLZzWeoZM/hqdefault.jpg",
+      "releaseDate": "2024-01-13",
+      "description": "A compact experimental single with a harder label edge."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": false,
+      "advisory": false,
+      "id": "kr-osc-06",
+      "number": "014",
+      "catalog": "KR-OSC / 06",
+      "title": "Smooth Criminal",
+      "artist": "Oscillator",
+      "albumName": "Smooth Criminal",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Metal",
+        "Experimental",
+        "Single",
+        "Cover"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=fEjjSUxQV_4",
+      "coverUrl": "https://i.ytimg.com/vi/fEjjSUxQV_4/hqdefault.jpg",
+      "releaseDate": "2024-01-14",
+      "description": "A metal and experimental cover entry, filed as a single."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": false,
+      "advisory": false,
+      "id": "kr-osc-07",
+      "number": "015",
+      "catalog": "KR-OSC / 07",
+      "title": "G.T.F.O",
+      "artist": "Oscillator",
+      "albumName": "G.T.F.O",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Metal",
+        "Industrial",
+        "Instrumental",
+        "Demo"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=HdiH-cpbleE",
+      "coverUrl": "https://i.ytimg.com/vi/HdiH-cpbleE/hqdefault.jpg",
+      "releaseDate": "2024-01-15",
+      "description": "Industrial metal instrumentation in demo form."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": true,
+      "advisory": false,
+      "id": "kr-kol-04",
+      "number": "016",
+      "catalog": "KR-KOL / 04",
+      "title": "Hammerfall (Acoustic)",
+      "artist": "Kölja",
+      "albumName": "Hammerfall Acoustic",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Acoustic",
+        "Folk",
+        "Demo",
+        "Single"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=djJ4DpXkC1E",
+      "coverUrl": "https://i.ytimg.com/vi/djJ4DpXkC1E/hqdefault.jpg",
+      "releaseDate": "2024-01-16",
+      "description": "The same song stripped bare into an acoustic and folk demo."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": false,
+      "advisory": false,
+      "id": "kr-osc-08",
+      "number": "017",
+      "catalog": "KR-OSC / 08",
+      "title": "Untitled Demo Track",
+      "artist": "Oscillator",
+      "albumName": "Untitled Demo Track",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Metal",
+        "Instrumental",
+        "Demo"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=qrxRFZHVUi0",
+      "coverUrl": "https://i.ytimg.com/vi/qrxRFZHVUi0/hqdefault.jpg",
+      "releaseDate": "2024-01-17",
+      "description": "A metal instrumental demo kept intentionally raw."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": true,
+      "advisory": false,
+      "id": "kr-dm-01",
+      "number": "018",
+      "catalog": "KR-DM / 01",
+      "title": "Headless",
+      "artist": "Des Maya",
+      "albumName": "Headless",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Experimental",
+        "Demo",
+        "Single"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=i7XT96PYMW0",
+      "coverUrl": "https://i.ytimg.com/vi/i7XT96PYMW0/hqdefault.jpg",
+      "releaseDate": "2024-01-18",
+      "description": "Short, sharp and experimental, with demo energy and final-cut confidence."
+    },
+    {
+      "published": true,
+      "spotifyUrl": "",
+      "bandcampUrl": "",
+      "featured": true,
+      "advisory": false,
+      "id": "kr-mon-01",
+      "number": "019",
+      "catalog": "KR-MON / 01",
+      "title": "The March To Infinity",
+      "artist": "MonicaTron",
+      "albumName": "The March To Infinity",
+      "producer": "Kölja",
+      "recordLabel": "Kölja Records",
+      "genres": [
+        "Experimental",
+        "Single",
+        "Demo"
+      ],
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/watch?v=UQ8yATeTuIo",
+      "coverUrl": "https://i.ytimg.com/vi/UQ8yATeTuIo/hqdefault.jpg",
+      "releaseDate": "2024-01-19",
+      "description": "Experimental electronics with scale, repetition and a sense of movement."
+    }
+  ]
+}</script>
+<script>
+(() => {
+  const cards = Array.from(document.querySelectorAll("[data-release-card]"));
+  const filterButtons = Array.from(document.querySelectorAll("[data-filter-genre]"));
+
+  function escapeAttribute(value) {
+    return String(value || "").replace(/[&<>"']/g, (char) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[char]));
+  }
+
+  function getYouTubeId(url) {
+    const raw = String(url || "").trim();
+    if (/^[A-Za-z0-9_-]{8,}$/.test(raw) && !raw.includes("http")) return raw;
+    const patterns = [
+      /youtube\.com\/watch\?v=([^&]+)/,
+      /youtu\.be\/([^?&]+)/,
+      /youtube\.com\/embed\/([^?&]+)/
+    ];
+    for (const pattern of patterns) {
+      const match = raw.match(pattern);
+      if (match) return match[1];
+    }
+    return "";
+  }
+
+  function applyFilter(genre) {
+    const selected = genre || "All";
+    cards.forEach((card) => {
+      const genres = (card.dataset.genres || "").split("|").filter(Boolean);
+      card.hidden = selected !== "All" && !genres.includes(selected);
+    });
+    filterButtons.forEach((button) => {
+      const active = button.dataset.filterGenre === selected;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+  }
+
+  function playMedia(button) {
+    const holder = button.closest(".card, .featured")?.querySelector(".card-cover, .featured-media");
+    if (!holder) return;
+    const url = button.dataset.mediaUrl || "";
+    const mediaType = button.dataset.mediaType || "video";
+    const title = escapeAttribute(button.dataset.mediaTitle || "Kölja Records player");
+    if (mediaType === "audio") {
+      holder.innerHTML = '<div class="audio-player"><strong>' + title + '</strong><audio controls autoplay src="' + escapeAttribute(url) + '"></audio></div>';
+      return;
+    }
+    const videoId = button.dataset.videoId || getYouTubeId(url);
+    if (videoId) {
+      holder.innerHTML = '<iframe class="media-frame" title="' + title + '" src="https://www.youtube.com/embed/' + escapeAttribute(videoId) + '?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+      return;
+    }
+    holder.innerHTML = '<video class="media-frame" controls autoplay src="' + escapeAttribute(url) + '"></video>';
+  }
+
+  document.addEventListener("click", (event) => {
+    const filter = event.target.closest("[data-filter-genre]");
+    if (filter) {
+      event.preventDefault();
+      applyFilter(filter.dataset.filterGenre);
+      return;
+    }
+    const media = event.target.closest("[data-play-media]");
+    if (media) {
+      event.preventDefault();
+      playMedia(media);
+    }
+  });
+})();
+</script>
+</body>
+</html>
