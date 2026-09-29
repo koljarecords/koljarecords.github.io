@@ -203,8 +203,14 @@
     if (i === current && frame) return toggle();
     current = i;
     const t = tracks[i];
+    const opening = playerEl.hidden;
     playerEl.hidden = false; music.classList.add("has-player");
     titleEl.textContent = t.title; artistEl.textContent = t.artist; timeEl.textContent = "0:00";
+    // on phones the player opens above the list, often off-screen: bring it into view
+    requestAnimationFrame(() => {
+      const r = playerEl.getBoundingClientRect();
+      if (opening || r.top < 0 || r.bottom > innerHeight) playerEl.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: r.height > innerHeight * .9 ? "start" : "nearest" });
+    });
     hint(null);
     setPlaying(false);
     moveArm(angleFor(t.band.outer - 4), false);   // the needle drops at the start of the track
@@ -250,9 +256,11 @@
     buildBands();
     tracks.forEach((t, i) => {
       t.row.setAttribute("aria-label", `Play ${t.title} by ${t.artist}`);
-      t.row.addEventListener("mouseenter", () => cue(i));
-      t.row.addEventListener("focus", () => cue(i));
-      t.row.addEventListener("mouseleave", () => uncue());
+      if (canHover) {   // phones fake mouse events on tap; only a real pointer cues the arm
+        t.row.addEventListener("mouseenter", () => cue(i));
+        t.row.addEventListener("mouseleave", () => uncue());
+      }
+      t.row.addEventListener("focus", () => { if (t.row.matches(":focus-visible")) cue(i); });
       t.row.addEventListener("blur", () => uncue(60));
       t.row.addEventListener("click", () => pick(i));
     });
