@@ -15,12 +15,11 @@ To change which releases the record plays, mark them *featured* in Kölja Record
 
 ## Publishing
 
-This copy is on the branch `hub`, not committed or pushed. The `koljarecords` GitHub account is signed in only in Safari,
-so publishing is yours: commit on `hub`, push, and merge into `main` (or upload the folder through the GitHub web UI).
-Pages then serves the new root within a minute or two.
+GitHub Pages serves `main` from the root (CNAME kolja.com.br). Push to `main` and the site updates within a minute or two.
+The `the-one-and-only-niko` account has write access to this repo, so the command line can push directly.
 
-Moving the label to `/records/` means old links like `kolja.com.br/#catalog` now open the hub; the hub's Records door
-and the nav both lead to the label.
+Moving the label to `/records/` means old links like `kolja.com.br/#catalog` now open the homepage; its Kölja Records
+section and the nav both lead to the label.
 
-`games/` was copied from `~/Documents/Developer/kolja-games-site` (whose README lists every media source); from now on
-this repo is the copy to edit.
+`games/` was copied from `~/Documents/Developer/kolja-games-site` (whose README lists every media source); this repo is
+the copy to edit.
