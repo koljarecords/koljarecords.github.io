@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kölja Store · Jogos para a Retrotv</title>
+<meta name="description" content="Cartuchos da Kölja Games para a Retrotv: jogos pequenos, feitos à mão, que rodam na TV do celular e no computador. Pague com PIX, é seu para sempre.">
+<meta property="og:title" content="Kölja Store">
+<meta property="og:description" content="Jogos para a Retrotv. Pague com PIX, é seu para sempre.">
+<meta property="og:image" content="https://kolja.com.br/loja/media/tijolinho-title.jpg">
+<meta property="og:url" content="https://kolja.com.br/loja/">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://kolja.com.br/loja/">
+<link rel="icon" href="../games/assets/brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../games/assets/studio.css">
+<style>
+  .store { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+  .store > section { padding: 0; } /* studio.css pads every section; this page spaces its own */
+  .store > .store-hero { padding: 150px 0 70px; display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(28px, 5vw, 80px); align-items: center; }
+  .store-hero h1 { font: 900 clamp(64px, 10vw, 148px)/.86 var(--display); text-transform: uppercase; letter-spacing: .01em; }
+  .store-hero h1 span { color: var(--ember); }
+  .store-hero__line { font: 500 clamp(20px, 2.2vw, 28px)/1.3 var(--sans); margin: 26px 0 14px; }
+  .store-hero__sub { color: var(--bone-2); max-width: 34em; }
+  .store-hero__tv { position: relative; border-radius: 26px; padding: 18px; background: linear-gradient(160deg, #6b4524, #3c2513); box-shadow: 0 30px 80px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.08); }
+  .store-hero__tv img { height: auto; border-radius: 16px; aspect-ratio: 4/3; object-fit: cover; width: 100%; filter: saturate(1.1); }
+  .store-hero__tv::after { content: "KÖLJA · TV-14"; position: absolute; left: 30px; bottom: -28px; font: 500 11px/1 var(--mono); letter-spacing: .2em; color: var(--bone-3); }
+
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 30px 0 110px; }
+  .step { background: var(--ink); padding: 28px 26px 30px; }
+  .step__no { font: 800 54px/1 var(--display); color: var(--ember); }
+  .step h3 { font: 800 26px/1.1 var(--display); text-transform: uppercase; letter-spacing: .02em; margin: 14px 0 10px; }
+  .step p { color: var(--bone-2); font-size: 15.5px; }
+  .step code { font: 400 13.5px var(--mono); color: var(--bone); background: var(--ink-3); padding: 1px 6px; border-radius: 4px; white-space: nowrap; }
+
+  .shelf__head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 26px; }
+  .shelf__head h2 { font: 900 clamp(40px, 5vw, 64px)/1 var(--display); text-transform: uppercase; }
+  .carts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 28px; margin-bottom: 120px; }
+  .cart { background: var(--ink-2); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; scroll-margin-top: 90px; transition: border-color .3s, transform .3s; }
+  .cart:target { border-color: var(--ember); box-shadow: 0 0 0 1px var(--ember), 0 20px 60px rgba(217,72,43,.18); }
+  .cart__shots { position: relative; aspect-ratio: 4/3; background: #000; }
+  .cart__shots img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; transition: opacity .5s; }
+  .cart__shots img + img { opacity: 0; }
+  .cart:hover .cart__shots img + img, .cart:focus-within .cart__shots img + img { opacity: 1; }
+  .cart__body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .cart__meta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .cart__title { font: 900 40px/1 var(--display); text-transform: uppercase; letter-spacing: .02em; }
+  .cart__text { color: var(--bone-2); font-size: 15.5px; flex: 1; }
+  .cart__buy { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 8px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .price { font: 800 30px/1 var(--display); }
+  .price small { font: 500 11px/1 var(--mono); letter-spacing: .14em; color: var(--bone-3); text-transform: uppercase; display: block; margin-bottom: 6px; }
+  .btn { font: 500 13px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; border: 0; border-radius: 999px; padding: 15px 22px; cursor: pointer; display: inline-flex; gap: 10px; align-items: center; }
+  .btn--pix { background: var(--ember); color: #fff; }
+  .btn--pix:hover { background: #ec5a3b; }
+  .btn--pix svg { width: 18px; height: 18px; }
+  .btn--ghost { background: transparent; color: var(--bone-2); box-shadow: inset 0 0 0 1px var(--line); cursor: default; }
+  .chip--free { color: #5cc96b; box-shadow: inset 0 0 0 1px rgba(92,201,107,.4); }
+
+  .faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(28px, 6vw, 90px); margin-bottom: 130px; }
+  .faq h2 { font: 900 clamp(40px, 5vw, 64px)/1 var(--display); text-transform: uppercase; }
+  .faq details { border-top: 1px solid var(--line); padding: 18px 0; }
+  .faq details:last-child { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; font-weight: 500; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  .faq summary::after { content: "+"; font-family: var(--mono); color: var(--ember); }
+  .faq details[open] summary::after { content: "–"; }
+  .faq details p { color: var(--bone-2); margin-top: 10px; font-size: 15.5px; }
+
+  .pix { margin: auto; border: 0; border-radius: 20px; padding: 0; background: var(--ink-2); color: var(--bone); width: min(440px, 92vw); box-shadow: 0 30px 90px rgba(0,0,0,.7), inset 0 0 0 1px var(--line); }
+  .pix::backdrop { background: rgba(0,0,0,.7); backdrop-filter: blur(4px); }
+  .pix__in { padding: 28px; display: grid; gap: 14px; }
+  .pix h3 { font: 900 34px/1 var(--display); text-transform: uppercase; }
+  .pix p { color: var(--bone-2); font-size: 15px; }
+  .pix label { font: 500 11px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--bone-3); display: grid; gap: 8px; }
+  .pix input { font: 400 16px var(--sans); color: var(--bone); background: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 13px 14px; }
+  .pix input:focus { outline: none; border-color: var(--ember); }
+  .pix__qr { aspect-ratio: 1; width: 200px; justify-self: center; border-radius: 12px; background: repeating-linear-gradient(45deg, var(--ink-3) 0 10px, var(--ink) 10px 20px); display: grid; place-items: center; text-align: center; font: 500 11px/1.5 var(--mono); letter-spacing: .12em; color: var(--bone-3); text-transform: uppercase; padding: 20px; }
+  .pix__row { display: flex; gap: 10px; justify-content: flex-end; }
+  .pix__note { font: 400 12.5px/1.5 var(--mono) !important; color: var(--bone-3) !important; }
+
+  @media (max-width: 860px) {
+    .store > .store-hero { grid-template-columns: 1fr; padding-top: 120px; }
+    .steps, .faq { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="nav__mark" href="../games/">Kölja<span>Games</span></a>
+  <nav>
+    <a href="../">Kölja</a>
+    <a href="../games/">Games</a>
+    <a href="#jogos" class="nav__cta">Kölja Store</a>
+  </nav>
+</header>
+
+<main class="store">
+  <section class="store-hero">
+    <div>
+      <span class="label">Kölja Store · cartuchos para a Retrotv</span>
+      <h1>Kölja<br><span>Store</span></h1>
+      <p class="store-hero__line">Jogos pequenos, feitos à mão, para a TV do seu celular.</p>
+      <p class="store-hero__sub">Os cartuchos rodam dentro da Retrotv, no MENU › JOGOS. Com a TV passando no computador, o jogo abre na tela grande e o celular vira o controle. Você paga uma vez com PIX e o jogo é seu, em todos os seus celulares, sem assinatura e sem internet para jogar.</p>
+    </div>
+    <div class="store-hero__tv"><img src="media/tijolinho-play.jpg" alt="Tijolinho rodando: fileiras de tijolos coloridos, a bola e a raquete" width="960" height="720"></div>
+  </section>
+
+  <section class="steps" aria-label="Como funciona">
+    <div class="step"><div class="step__no">1</div><h3>Pague com PIX</h3><p>Escolha o jogo, deixe seu e-mail e pague o PIX pelo app do seu banco. Leva menos de um minuto.</p></div>
+    <div class="step"><div class="step__no">2</div><h3>Receba o código</h3><p>O código de licença chega no seu e-mail logo depois do pagamento, com um link que abre a Retrotv e já destrava o jogo.</p></div>
+    <div class="step"><div class="step__no">3</div><h3>Jogue</h3><p>Se preferir, copie o código e cole em <code>MENU › JOGOS › TENHO UM CÓDIGO</code>. Depois disso o jogo funciona até sem internet.</p></div>
+  </section>
+
+  <section id="jogos" class="shelf">
+    <div class="shelf__head"><h2>Cartuchos</h2><span class="label">Precisa da Retrotv 0.2 ou mais nova</span></div>
+    <div class="carts">
+      <article class="cart" id="tijolinho">
+        <div class="cart__shots"><img src="media/tijolinho-title.jpg" alt="Tela de título do Tijolinho" loading="lazy"><img src="media/tijolinho-play.jpg" alt="" loading="lazy"></div>
+        <div class="cart__body">
+          <div class="cart__meta"><span class="chip chip--free">Grátis</span><span class="label">5 fases · direcional ou toque</span></div>
+          <h3 class="cart__title">Tijolinho</h3>
+          <p class="cart__text">Quebre todos os tijolos com a raquete. Quanto mais perto da ponta a bola bate, mais fechado é o ângulo. Os tijolos prateados aguentam duas pancadas, e a última fase é uma fortaleza.</p>
+          <div class="cart__buy"><div class="price"><small>Preço</small>Grátis</div><span class="btn btn--ghost">Já vem na Retrotv</span></div>
+        </div>
+      </article>
+
+      <article class="cart" id="cobrinha">
+        <div class="cart__shots"><img src="media/cobrinha-title.jpg" alt="Tela de título da Cobrinha" loading="lazy"><img src="media/cobrinha-play.jpg" alt="" loading="lazy"></div>
+        <div class="cart__body">
+          <div class="cart__meta"><span class="chip chip--live">Novo</span><span class="label">Direcional ou deslizar</span></div>
+          <h3 class="cart__title">Cobrinha</h3>
+          <p class="cart__text">A cobra cresce a cada fruta e fica mais rápida a cada cinco. De vez em quando aparece uma fruta dourada que some se você demorar. Só não bata na parede nem no próprio rabo.</p>
+          <div class="cart__buy"><div class="price"><small>Preço</small>R$ 4,90</div>
+            <button class="btn btn--pix" type="button" data-buy="cobrinha" data-name="Cobrinha" data-price="R$ 4,90"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5 21.5 12 12 21.5 2.5 12zm0 4.2L6.7 12l5.3 5.3 5.3-5.3z"/></svg>Pagar com PIX</button></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="faq" aria-labelledby="faq-title">
+    <h2 id="faq-title">Perguntas</h2>
+    <div>
+      <details><summary>Preciso de internet para jogar?</summary><p>Só para baixar a Retrotv e receber o código. O código é conferido dentro do próprio celular, então depois de destravado o jogo funciona offline.</p></details>
+      <details><summary>Posso jogar em outro celular?</summary><p>Pode. O código é seu, não do aparelho. Cole o mesmo código na Retrotv do outro celular.</p></details>
+      <details><summary>Como jogo no computador?</summary><p>Na Retrotv, toque em NO PC e abra o endereço que aparece no computador, no mesmo Wi-Fi. Depois escolha o jogo em MENU › JOGOS: ele abre na tela do computador e o celular vira o controle, com direcional, A, B e START. O teclado do computador também funciona.</p></details>
+      <details><summary>Perdi o código. E agora?</summary><p>Procure o e-mail da compra, ou responda a ele, e a gente manda o código de novo.</p></details>
+      <details><summary>E se eu me arrepender?</summary><p>Você tem 7 dias para desistir da compra, como manda o Código de Defesa do Consumidor (art. 49). É só responder ao e-mail da compra.</p></details>
+    </div>
+  </section>
+</main>
+
+<dialog class="pix" id="pix">
+  <form method="dialog" class="pix__in">
+    <span class="label">Kölja Store · PIX</span>
+    <h3 id="pix-title">Cobrinha</h3>
+    <p>Deixe o e-mail onde o código deve chegar. O QR do PIX aparece aqui, e o código chega assim que o banco confirmar.</p>
+    <label>E-mail<input type="email" name="email" placeholder="voce@email.com" autocomplete="email" required></label>
+    <div class="pix__qr" id="pix-qr">QR do PIX<br>aparece aqui</div>
+    <p class="pix__note">Prévia: o pagamento ainda não está ligado. Nada é cobrado.</p>
+    <div class="pix__row"><button class="btn btn--ghost" value="cancel" style="cursor:pointer">Fechar</button></div>
+  </form>
+</dialog>
+
+<script>
+  // Prévia da loja: o botão abre o pagamento, que vai falar com o servidor de PIX quando ele existir (ver PIX-DESIGN.md).
+  const dlg = document.getElementById('pix');
+  document.querySelectorAll('[data-buy]').forEach(b => b.addEventListener('click', () => {
+    document.getElementById('pix-title').textContent = b.dataset.name + ' · ' + b.dataset.price;
+    dlg.showModal();
+  }));
+</script>
+</body>
+</html>
