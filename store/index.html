@@ -146,7 +146,26 @@
   .box__name small { margin-top: 11px; font: 600 10px/1.2 var(--mono); letter-spacing: .14em; text-transform: uppercase; opacity: .85; }
   .box--tijolinho { --cover: #1a1a3a; --cover-ink: #f2c94c; --spine: #f2c94c; --spine-ink: #1a1a3a; }
   .box--cobrinha { --cover: #0f2a19; --cover-ink: #7fe08a; --spine: #3f9a4f; --spine-ink: #071a0d; }
-  .box--maldaserra { --cover: #140707; --cover-ink: #e6dcc4; --spine: #8a2a24; --spine-ink: #f2eee6; }
+  .box--maldaserra { --cover: #140707; --cover-ink: #e6dcc4; --spine: #0b0a10; --spine-ink: #d6d0ff; }
+  /* ÓRBITA discs come in a disc case: black strip with the orbit mark, a clear hinge, the disc standing behind */
+  .box--k32 .box__strip { background: #0b0a10; color: #d6d0ff; padding: 7px 10px; }
+  .box--k32 .box__strip svg { width: 15px; height: 15px; }
+  .box--k32 .box__strip em { font-style: normal; color: #8f86d8; }
+  .box--k32 .box__front::after { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 9px; background: linear-gradient(90deg, rgba(255,255,255,.22), rgba(255,255,255,.05) 60%, rgba(0,0,0,.35)); }
+  .box--k32 .box__name small b { font: inherit; color: #b9b0ff; }
+  .box--k32 .box__art { overflow: hidden; }
+  .box--k32 .box__art img { transform: scale(1.2); transform-origin: 50% 0; } /* the cover leaves the game's ammo panel out */
+  .disc { position: absolute; top: -58px; right: -34px; width: 150px; aspect-ratio: 1; border-radius: 50%; transform: translateZ(-14px) rotate(-8deg);
+    background: radial-gradient(circle, #0b0a10 0 9%, #d8d3ef 9.5% 15%, rgba(255,255,255,.35) 15.5% 17%, transparent 17.5%),
+      repeating-radial-gradient(circle, rgba(255,255,255,0) 0 3px, rgba(255,255,255,.07) 3px 4px),
+      conic-gradient(from 40deg, #9fb0ff, #ffb3e0, #9ff0d8, #ffe48f, #b9a2ff, #9fb0ff);
+    box-shadow: 0 0 0 1px rgba(255,255,255,.25) inset, 0 8px 18px rgba(0,0,0,.55); transition: transform .5s cubic-bezier(.16,1,.3,1); }
+  .disc::after { content: ""; position: absolute; inset: 22%; border-radius: 50%; box-shadow: 0 0 0 1px rgba(255,255,255,.28), 0 0 0 14px rgba(255,255,255,.07); }
+  .item:hover .disc, .item:focus-within .disc { transform: translateZ(-14px) translateY(-14px) rotate(24deg); }
+  .card__shots { margin-top: 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; flex: none; }
+  .card__shots a { display: block; border: 2px solid #2a2320; background: #000; aspect-ratio: 4 / 3; overflow: hidden; }
+  .card__shots img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; display: block; }
+  .card__shots a:hover, .card__shots a:focus-visible { border-color: #8a2a24; }
   .box--soon { --cover: #000; --cover-ink: #e6e0d4; --spine: #1b1716; --spine-ink: #8a2a24; }
   .box--soon .box__art { display: grid; place-items: center; background: radial-gradient(circle at 50% 55%, #1d0a08, #000 70%); }
   .box--soon .box__art svg { width: 46%; image-rendering: pixelated; animation: blink 5s steps(1) infinite; }
@@ -366,20 +385,26 @@
 
       <article class="item" id="maldaserra">
         <div class="slot">
-          <div class="box box--maldaserra">
+          <div class="box box--maldaserra box--k32">
+            <span class="disc" aria-hidden="true"></span>
             <div class="box__spine" aria-hidden="true"><span>Mal da Serra</span></div>
             <div class="box__front">
-              <div class="box__strip" aria-hidden="true"><span>KÖLJA</span><i><b></b></i><span>RETROTV</span></div>
-              <div class="box__art"><img src="media/maldaserra-title.jpg" alt="Tela de título do Mal da Serra: o sanatório na névoa" width="960" height="720" loading="lazy"><img src="media/maldaserra-ala.jpg" alt="" width="960" height="720" loading="lazy"></div>
-              <div class="box__name" aria-hidden="true"><b>Mal da Serra</b><small>1 jogador · terror</small></div>
+              <div class="box__strip" aria-hidden="true"><span>KÖLJA <em>ÓRBITA</em></span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/><circle cx="17.6" cy="6.4" r="2.4" fill="currentColor"/></svg><span>32 BITS</span></div>
+              <div class="box__art"><img src="media/maldaserra-boss.jpg" alt="Mal da Serra: Helena diante da fornalha da casa da caldeira" width="960" height="720" loading="lazy"><img src="media/maldaserra-ala.jpg" alt="" width="960" height="720" loading="lazy"></div>
+              <div class="box__name" aria-hidden="true"><b>Mal da Serra</b><small>1 jogador · <b>disco</b></small></div>
             </div>
           </div>
           <span class="sticker sticker--price sticker--long" aria-hidden="true"><span>R$ 12,90<small>NOVO</small></span></span>
         </div>
         <div class="card">
           <h3>Mal da Serra</h3>
-          <p class="card__meta">Novo · terror · precisa da Retrotv 0.2.2</p>
-          <p>Serra da Mantiqueira, 1987. Helena entra no Sanatório Santa Luzia, fechado desde o surto de 1971, atrás do irmão que subiu para fotografar o prédio e não voltou. São oito salas, câmeras fixas, pouca munição, chaves, um relógio parado e um chefe na casa da caldeira. Para guardar o jogo, acenda uma vela num oratório.</p>
+          <p class="card__meta">Novo · terror em 3D · console ÓRBITA · Retrotv 0.2.3</p>
+          <p>Serra da Mantiqueira, 1987. Helena entra no Sanatório Santa Luzia, fechado desde 1971, atrás do irmão que não voltou. Oito salas com câmeras fixas, pouca munição, chaves, um relógio parado e um chefe na casa da caldeira. É o primeiro disco do KÖLJA ÓRBITA, o console 32 bits da Retrotv: o celular vira o controle, e um toque ergue a arma.</p>
+          <div class="card__shots">
+            <a href="media/maldaserra-ala.jpg"><img src="media/maldaserra-ala.jpg" alt="Helena mira num corpo-seco na ala leste" width="960" height="720" loading="lazy"></a>
+            <a href="media/maldaserra-capela.jpg"><img src="media/maldaserra-capela.jpg" alt="A capela à noite, com as freiras entre os bancos" width="960" height="720" loading="lazy"></a>
+            <a href="media/maldaserra-patio.jpg"><img src="media/maldaserra-patio.jpg" alt="O pátio do sanatório na névoa" width="960" height="720" loading="lazy"></a>
+          </div>
           <div class="card__buy"><span class="card__price">R$ 12,90</span>
             <a class="btn-tag" href="mailto:contato@kolja.com.br?subject=Pedido%20K%C3%B6lja%20Store%3A%20Mal%20da%20Serra" data-buy="maldaserra" data-name="Mal da Serra" data-price="R$ 12,90">Comprar</a></div>
         </div>
