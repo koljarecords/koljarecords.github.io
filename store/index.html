@@ -146,6 +146,7 @@
   .box__name small { margin-top: 11px; font: 600 10px/1.2 var(--mono); letter-spacing: .14em; text-transform: uppercase; opacity: .85; }
   .box--tijolinho { --cover: #1a1a3a; --cover-ink: #f2c94c; --spine: #f2c94c; --spine-ink: #1a1a3a; }
   .box--cobrinha { --cover: #0f2a19; --cover-ink: #7fe08a; --spine: #3f9a4f; --spine-ink: #071a0d; }
+  .box--maldaserra { --cover: #140707; --cover-ink: #e6dcc4; --spine: #8a2a24; --spine-ink: #f2eee6; }
   .box--soon { --cover: #000; --cover-ink: #e6e0d4; --spine: #1b1716; --spine-ink: #8a2a24; }
   .box--soon .box__art { display: grid; place-items: center; background: radial-gradient(circle at 50% 55%, #1d0a08, #000 70%); }
   .box--soon .box__art svg { width: 46%; image-rendering: pixelated; animation: blink 5s steps(1) infinite; }
@@ -154,6 +155,7 @@
   .sticker { position: absolute; z-index: 5; display: grid; place-items: center; text-align: center; transform: rotate(-11deg); pointer-events: none; box-shadow: none; }
   .sticker--price { top: 118px; right: calc(50% - 176px); width: 92px; height: 92px; background: var(--tag); color: #2a1a00; font: 400 22px/1 var(--marker); clip-path: polygon(50% 0, 60% 13%, 75% 6%, 78% 22%, 94% 25%, 87% 40%, 100% 50%, 87% 60%, 94% 75%, 78% 78%, 75% 94%, 60% 87%, 50% 100%, 40% 87%, 25% 94%, 22% 78%, 6% 75%, 13% 60%, 0 50%, 13% 40%, 6% 25%, 22% 22%, 25% 6%, 40% 13%); }
   .sticker--free { top: 124px; right: calc(50% - 166px); width: 80px; height: 80px; border-radius: 50%; background: var(--leaf); color: #fff; font: 400 18px/1 var(--marker); box-shadow: inset 0 0 0 3px rgba(255,255,255,.35); }
+  .sticker--long { font-size: 18px; }
   .sticker small { display: block; font: 600 9px/1 var(--mono); letter-spacing: .12em; margin-top: 4px; }
 
   .card { position: relative; margin: 44px 16px 0; padding: 24px 22px 22px; flex: 1; display: flex; flex-direction: column; color: var(--ink-text); border-radius: 2px;
@@ -297,7 +299,7 @@
             <div class="tv__bezel"><div class="tv__glass" id="glass">
               <img class="on" src="media/tijolinho-play.jpg" alt="Tijolinho rodando: fileiras de tijolos coloridos, a bola e a raquete" width="960" height="720" data-name="Tijolinho" data-sub="Jogos · grátis">
               <img src="media/cobrinha-mid.jpg" alt="Cobrinha rodando: a cobra verde, uma fruta vermelha e uma dourada" width="960" height="720" loading="lazy" data-name="Cobrinha" data-sub="Jogos · R$ 4,90">
-              <div class="tv__eyes" data-name="? ? ?" data-sub="Jogos · em breve" role="img" aria-label="Tela escura com dois olhos pixelados: o próximo jogo, de terror, em breve"><svg viewBox="0 0 17 6" aria-hidden="true"><path fill="#f2eee6" d="M1 0h4v1h1v4H5v1H1V5H0V1h1zM12 0h4v1h1v4h-1v1h-4V5h-1V1h1z"/><path fill="#c8261c" d="M3 2h2v2H3zM14 2h2v2h-2z"/></svg></div>
+              <img src="media/maldaserra-boss.jpg" alt="Mal da Serra rodando: Helena mira no Dr. Vilela diante da fornalha da casa da caldeira" width="960" height="720" loading="lazy" data-name="Mal da Serra" data-sub="Jogos · R$ 12,90">
               <span class="tv__noise" aria-hidden="true"></span>
             </div></div>
             <div class="tv__badge" aria-hidden="true">KÖLJA</div>
@@ -362,23 +364,24 @@
         </div>
       </article>
 
-      <article class="item" id="em-breve">
+      <article class="item" id="maldaserra">
         <div class="slot">
-          <div class="box box--soon">
-            <div class="box__spine" aria-hidden="true"><span>? ? ?</span></div>
+          <div class="box box--maldaserra">
+            <div class="box__spine" aria-hidden="true"><span>Mal da Serra</span></div>
             <div class="box__front">
               <div class="box__strip" aria-hidden="true"><span>KÖLJA</span><i><b></b></i><span>RETROTV</span></div>
-              <div class="box__art"><svg viewBox="0 0 17 6" aria-hidden="true"><path fill="#f2eee6" d="M1 0h4v1h1v4H5v1H1V5H0V1h1zM12 0h4v1h1v4h-1v1h-4V5h-1V1h1z"/><path fill="#c8261c" d="M3 2h2v2H3zM14 2h2v2h-2z"/></svg></div>
-              <div class="box__name" aria-hidden="true"><b>? ? ?</b><small>terror · luz apagada</small></div>
+              <div class="box__art"><img src="media/maldaserra-title.jpg" alt="Tela de título do Mal da Serra: o sanatório na névoa" width="960" height="720" loading="lazy"><img src="media/maldaserra-ala.jpg" alt="" width="960" height="720" loading="lazy"></div>
+              <div class="box__name" aria-hidden="true"><b>Mal da Serra</b><small>1 jogador · terror</small></div>
             </div>
-            <span class="tape" aria-hidden="true">em breve</span>
           </div>
+          <span class="sticker sticker--price sticker--long" aria-hidden="true"><span>R$ 12,90<small>NOVO</small></span></span>
         </div>
         <div class="card">
-          <h3>Em breve: terror</h3>
-          <p class="card__meta">Ainda na oficina</p>
-          <p>O próximo cartucho é um jogo de terror, e ele está sendo feito agora. Quando ficar pronto, aparece aqui nesta prateleira e no MENU › JOGOS da sua Retrotv.</p>
-          <div class="card__buy"><span class="card__note">Melhor jogar de luz acesa.</span></div>
+          <h3>Mal da Serra</h3>
+          <p class="card__meta">Novo · terror · precisa da Retrotv 0.2.2</p>
+          <p>Serra da Mantiqueira, 1987. Helena entra no Sanatório Santa Luzia, fechado desde o surto de 1971, atrás do irmão que subiu para fotografar o prédio e não voltou. São oito salas, câmeras fixas, pouca munição, chaves, um relógio parado e um chefe na casa da caldeira. Para guardar o jogo, acenda uma vela num oratório.</p>
+          <div class="card__buy"><span class="card__price">R$ 12,90</span>
+            <a class="btn-tag" href="mailto:contato@kolja.com.br?subject=Pedido%20K%C3%B6lja%20Store%3A%20Mal%20da%20Serra" data-buy="maldaserra" data-name="Mal da Serra" data-price="R$ 12,90">Comprar</a></div>
         </div>
       </article>
     </div>
