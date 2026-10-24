@@ -514,13 +514,13 @@
 
     <div data-step="done" hidden>
       <p class="order__paid">Pago! O jogo é seu.</p>
-      <p>Este é o seu código de licença. Uma cópia foi para <b id="pix-to"></b>.</p>
+      <p id="pix-sent">Este é o seu código de licença. Uma cópia foi para <b id="pix-to"></b>.</p>
       <textarea id="pix-lic" readonly aria-label="Código de licença"></textarea>
       <div class="order__row">
         <button type="button" class="btn-tag btn-tag--ink" data-copy="pix-lic">Copiar código</button>
         <a class="btn-tag" id="pix-open" href="#">Abrir na Retrotv</a>
       </div>
-      <p class="order__note">No celular que tem a Retrotv, toque em Abrir na Retrotv. Ou cole o código em MENU › JOGOS › TENHO UM CÓDIGO. Guarde o e-mail: o código vale para sempre.</p>
+      <p class="order__note">No celular que tem a Retrotv, toque em Abrir na Retrotv. Ou cole o código em MENU › JOGOS › TENHO UM CÓDIGO.<span id="pix-keep"> Guarde o e-mail: o código vale para sempre.</span></p>
     </div>
 
     <div data-step="expired" hidden>
@@ -570,7 +570,12 @@
     stop(); step('done');
     $('pix-lic').value = o.license;
     $('pix-open').href = o.link;
-    $('pix-to').textContent = o.email || 'o seu e-mail';
+    // mail === false: the Worker has no e-mail sender yet, so don't promise a copy.
+    const sent = $('pix-sent'), to = document.createElement('b');
+    to.textContent = o.email || 'o seu e-mail';
+    if (o.mail === false) sent.textContent = 'Este é o seu código de licença. Copie e guarde num lugar seguro: ele vale para sempre.';
+    else { sent.textContent = 'Este é o seu código de licença. Uma cópia foi para '; sent.append(to, '.'); }
+    $('pix-keep').hidden = o.mail === false;
   }
   function watch(o) {
     clearTimeout(poll);
