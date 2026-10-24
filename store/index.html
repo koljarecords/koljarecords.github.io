@@ -535,7 +535,7 @@
 <script>
   // Compra com PIX automático pelo servidor da loja (tools/store/worker na retrofone-spinoffs).
   // Com STORE_API vazio, Comprar continua sendo o pedido por e-mail. Sem JS, o botão já é um mailto.
-  const STORE_API = '';
+  const STORE_API = 'https://kolja-store.kolja-store-worker.workers.dev';
   const local = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
   const api = (local && new URLSearchParams(location.search).get('api')) || STORE_API;
   if (api) document.documentElement.classList.add('pix-on');
