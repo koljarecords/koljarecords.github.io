@@ -210,6 +210,7 @@
   .receipt kbd { font: 600 12.5px var(--mono); background: #e7dfcf; padding: 1px 5px; border-radius: 3px; white-space: nowrap; }
   .receipt__end { margin-top: 16px; display: flex; justify-content: space-between; gap: 12px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #6b6458; }
   .stamp { display: inline-block; margin-top: 26px; padding: 9px 14px 7px; border: 3px double #b8352c; border-radius: 6px; color: #b8352c; font: 800 18px/1.05 var(--display); letter-spacing: .1em; text-transform: uppercase; transform: rotate(-5deg); opacity: .88; mix-blend-mode: multiply; }
+  html:not(.pix-on) .if-pix, .pix-on .if-manual { display: none !important; }
   .stamp small { display: block; font: 600 10px/1.3 var(--mono); letter-spacing: .12em; }
 
   /* ---------- balcão ---------- */
@@ -246,6 +247,26 @@
   .order p { color: #4a443b; }
   .order__note { font: 400 12.5px/1.5 var(--mono); color: #6b6458 !important; border-top: 2px dashed #c8bfae; padding-top: 12px; }
   .order .btn-tag { justify-content: center; }
+  .order [data-step] { display: grid; gap: 14px; }
+  .order [hidden] { display: none !important; }
+  .field { display: grid; gap: 6px; }
+  .field span { font: 600 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: #6b6458; }
+  .field input { font: 500 16px/1.3 var(--sans, "IBM Plex Sans", sans-serif); color: #221c16; background: #fff; border: 2px solid #c8bfae; border-radius: 3px; padding: 11px 12px; }
+  .field input:focus { outline: none; border-color: var(--ember); }
+  .order__err { font: 600 13.5px/1.45 var(--mono); color: #a8302a !important; }
+  .qr { display: block; width: min(240px, 70vw); aspect-ratio: 1; margin: 0 auto; background: #fff; padding: 10px; border: 2px dashed #6b4524; image-rendering: pixelated; }
+  .copyrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+  .copyrow input, .order textarea { font: 500 12.5px/1.45 var(--mono); color: #221c16; background: #fff; border: 2px solid #c8bfae; border-radius: 3px; padding: 10px; min-width: 0; }
+  .order textarea { resize: none; height: 104px; word-break: break-all; }
+  .copyrow .btn-tag { font-size: 15px; padding: 10px 12px 9px; }
+  .order__wait { display: flex; align-items: center; gap: 10px; font: 600 13px/1.3 var(--mono); letter-spacing: .04em; color: #3c2513 !important; }
+  .order__wait b { margin-left: auto; font-variant-numeric: tabular-nums; }
+  .blink { width: 10px; height: 10px; border-radius: 50%; background: var(--leaf); box-shadow: 0 0 8px var(--leaf); animation: blink 1.1s steps(2, start) infinite; }
+  @keyframes blink { to { visibility: hidden; } }
+  @media (prefers-reduced-motion: reduce) { .blink { animation: none; } }
+  .order__paid { font: 400 30px/1.05 var(--marker); color: #24642f !important; transform: rotate(-1.5deg); }
+  .order__row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .order__row .btn-tag { flex: 1; }
   .order__close { justify-self: end; font: 600 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: #6b6458; background: none; border: 0; padding: 8px 2px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 
   @media (max-width: 1100px) {
@@ -415,18 +436,23 @@
   <section class="wrap till" aria-labelledby="till-title">
     <div class="till__side">
       <div class="head"><h2 id="till-title">Como comprar</h2></div>
-      <p>Por enquanto a compra é feita por e-mail, e cada pedido é atendido por uma pessoa. Pode demorar um pouco, mas o código chega.</p>
-      <p class="marker">PIX automático em breve, direto nesta página, com o código chegando sozinho.</p>
+      <p class="if-manual">Por enquanto a compra é feita por e-mail, e cada pedido é atendido por uma pessoa. Pode demorar um pouco, mas o código chega.</p>
+      <p class="marker if-manual">PIX automático em breve, direto nesta página, com o código chegando sozinho.</p>
+      <p class="if-pix">Você paga com PIX aqui mesmo na página. Assim que o pagamento cai, o código de licença aparece na tela e vai para o seu e-mail.</p>
+      <p class="marker if-pix">Sem esperar ninguém: pagou, chegou.</p>
     </div>
     <div class="receipt">
       <div class="receipt__top"><b>KÖLJA STORE</b><span>Cartuchos para a Retrotv</span></div>
       <ol>
-        <li><span>01</span><div><b>Peça o jogo</b><p>Toque em Comprar e mande o pedido para <a href="mailto:contato@kolja.com.br">contato@kolja.com.br</a>. A gente responde com a chave PIX.</p></div></li>
-        <li><span>02</span><div><b>Pague com PIX</b><p>Pague pelo app do seu banco. Assim que o pagamento cair, o código de licença vai para o seu e-mail.</p></div></li>
+        <li class="if-manual"><span>01</span><div><b>Peça o jogo</b><p>Toque em Comprar e mande o pedido para <a href="mailto:contato@kolja.com.br">contato@kolja.com.br</a>. A gente responde com a chave PIX.</p></div></li>
+        <li class="if-manual"><span>02</span><div><b>Pague com PIX</b><p>Pague pelo app do seu banco. Assim que o pagamento cair, o código de licença vai para o seu e-mail.</p></div></li>
+        <li class="if-pix"><span>01</span><div><b>Toque em Comprar</b><p>Escreva seu nome e e-mail. A página mostra o QR code e o PIX copia e cola.</p></div></li>
+        <li class="if-pix"><span>02</span><div><b>Pague com PIX</b><p>Pague pelo app do seu banco. Em segundos o código aparece na tela e chega no seu e-mail.</p></div></li>
         <li><span>03</span><div><b>Jogue</b><p>Cole o código em <kbd>MENU › JOGOS › TENHO UM CÓDIGO</kbd>. Depois disso o jogo funciona até sem internet.</p></div></li>
       </ol>
       <div class="receipt__end"><span>Sem assinatura</span><span>É seu para sempre</span></div>
-      <div class="stamp">PIX automático<small>em breve</small></div>
+      <div class="stamp if-manual">PIX automático<small>em breve</small></div>
+      <div class="stamp if-pix">PIX automático<small>código na hora</small></div>
     </div>
   </section>
 
@@ -457,27 +483,167 @@
   <div class="fine"><span class="label">© 2026 Kölja</span><a class="label" href="../games/">Kölja Games</a></div>
 </footer>
 
-<dialog class="order" id="pix">
-  <form method="dialog" class="order__in">
+<dialog class="order" id="pix" aria-labelledby="pix-title">
+  <form method="dialog" class="order__in" novalidate>
     <span class="label">Kölja Store · pedido</span>
     <h3 id="pix-title">Cobrinha</h3>
-    <p>O PIX automático ainda não está ligado, então por enquanto a compra é feita por e-mail. Mande o pedido para <b>contato@kolja.com.br</b> com o nome do jogo. A gente responde com a chave PIX e, quando o pagamento cair, manda o seu código de licença.</p>
-    <a class="btn-tag" id="pix-mail" href="mailto:contato@kolja.com.br">Escrever o pedido</a>
-    <p class="order__note">Nada é cobrado nesta página. Em breve: PIX automático, com o código chegando sozinho.</p>
+
+    <div data-step="manual">
+      <p>O PIX automático ainda não está ligado, então por enquanto a compra é feita por e-mail. Mande o pedido para <b>contato@kolja.com.br</b> com o nome do jogo. A gente responde com a chave PIX e, quando o pagamento cair, manda o seu código de licença.</p>
+      <a class="btn-tag" id="pix-mail" href="mailto:contato@kolja.com.br">Escrever o pedido</a>
+      <p class="order__note">Nada é cobrado nesta página. Em breve: PIX automático, com o código chegando sozinho.</p>
+    </div>
+
+    <div data-step="form" hidden>
+      <p>O código de licença aparece aqui na tela assim que o PIX cair, e também vai para o seu e-mail.</p>
+      <label class="field"><span>Seu nome</span><input id="pix-name" name="name" autocomplete="name" maxlength="60" required></label>
+      <label class="field"><span>Seu e-mail</span><input id="pix-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="120" required></label>
+      <button class="btn-tag" id="pix-go" value="go">Pagar com PIX</button>
+      <p class="order__err" id="pix-err" role="alert" hidden></p>
+      <p class="order__note">Pagamento pelo Mercado Pago. Você paga uma vez e o jogo é seu para sempre, em qualquer celular com a Retrotv.</p>
+    </div>
+
+    <div data-step="pay" hidden>
+      <p>Abra o app do seu banco, escolha PIX e leia o QR code. No celular, copie o código abaixo e use o PIX copia e cola.</p>
+      <img class="qr" id="pix-qr" alt="QR code do PIX" hidden>
+      <a class="btn-tag btn-tag--leaf" id="pix-ticket" target="_blank" rel="noopener" hidden>Ver o QR code no Mercado Pago</a>
+      <div class="copyrow"><input id="pix-code" readonly aria-label="PIX copia e cola"><button type="button" class="btn-tag btn-tag--ink" data-copy="pix-code">Copiar</button></div>
+      <p class="order__wait" aria-live="polite"><span class="blink" aria-hidden="true"></span><span id="pix-wait">Esperando o pagamento</span><b id="pix-timer"></b></p>
+      <p class="order__note">Pode deixar esta janela aberta: quando o PIX cair, o código aparece aqui sozinho. Se fechar, é só tocar em Comprar de novo neste aparelho, ou esperar o e-mail.</p>
+    </div>
+
+    <div data-step="done" hidden>
+      <p class="order__paid">Pago! O jogo é seu.</p>
+      <p>Este é o seu código de licença. Uma cópia foi para <b id="pix-to"></b>.</p>
+      <textarea id="pix-lic" readonly aria-label="Código de licença"></textarea>
+      <div class="order__row">
+        <button type="button" class="btn-tag btn-tag--ink" data-copy="pix-lic">Copiar código</button>
+        <a class="btn-tag" id="pix-open" href="#">Abrir na Retrotv</a>
+      </div>
+      <p class="order__note">No celular que tem a Retrotv, toque em Abrir na Retrotv. Ou cole o código em MENU › JOGOS › TENHO UM CÓDIGO. Guarde o e-mail: o código vale para sempre.</p>
+    </div>
+
+    <div data-step="expired" hidden>
+      <p>Este PIX expirou antes do pagamento, então nada foi cobrado. Se você já pagou, espere o e-mail ou escreva para <a href="mailto:contato@kolja.com.br">contato@kolja.com.br</a>.</p>
+      <button type="button" class="btn-tag" id="pix-again">Gerar outro PIX</button>
+    </div>
+
     <button class="order__close" value="cancel">Fechar</button>
   </form>
 </dialog>
 
 <script>
-  // Compra manual por e-mail até o PIX automático existir. Sem JS, o botão já é um mailto.
-  const dlg = document.getElementById('pix');
+  // Compra com PIX automático pelo servidor da loja (tools/store/worker na retrofone-spinoffs).
+  // Com STORE_API vazio, Comprar continua sendo o pedido por e-mail. Sem JS, o botão já é um mailto.
+  const STORE_API = '';
+  const local = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  const api = (local && new URLSearchParams(location.search).get('api')) || STORE_API;
+  if (api) document.documentElement.classList.add('pix-on');
+
+  const dlg = document.getElementById('pix'), $ = id => document.getElementById(id);
+  const ERR = {
+    bad_name: 'Escreva o seu nome.', bad_email: 'Confira o e-mail: é para ele que o código vai.',
+    too_many: 'Muitos pedidos seguidos daqui. Espere alguns minutos e tente de novo.',
+    provider: 'O Mercado Pago não respondeu agora. Tente de novo em instantes.',
+  };
+  let game = null, poll = null, tick = null;
+  const step = s => dlg.querySelectorAll('[data-step]').forEach(d => d.hidden = d.dataset.step !== s);
+  const saved = g => { try { return JSON.parse(localStorage.getItem('kstore:' + g)) } catch { return null } };
+  const save = (g, o) => { try { o ? localStorage.setItem('kstore:' + g, JSON.stringify(o)) : localStorage.removeItem('kstore:' + g) } catch {} };
+  const stop = () => { clearTimeout(poll); clearInterval(tick); poll = tick = null; };
+
+  function showPay(o) {
+    step('pay');
+    $('pix-code').value = o.copia_e_cola;
+    $('pix-qr').hidden = !o.qr_base64;
+    if (o.qr_base64) $('pix-qr').src = 'data:image/png;base64,' + o.qr_base64;
+    $('pix-ticket').hidden = !!o.qr_base64 || !o.ticket_url;
+    if (o.ticket_url) $('pix-ticket').href = o.ticket_url;
+    const left = () => {
+      const s = Math.max(0, o.expires - Math.floor(Date.now() / 1000));
+      $('pix-timer').textContent = String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
+    };
+    left(); clearInterval(tick); tick = setInterval(left, 1000);
+    watch(o);
+  }
+  function showDone(o) {
+    stop(); step('done');
+    $('pix-lic').value = o.license;
+    $('pix-open').href = o.link;
+    $('pix-to').textContent = o.email || 'o seu e-mail';
+  }
+  function watch(o) {
+    clearTimeout(poll);
+    poll = setTimeout(async () => {
+      if (!dlg.open) return;
+      try {
+        const r = await fetch(api + '/order/' + o.order, { cache: 'no-store' });
+        if (r.status === 404) { save(game, null); return step('expired'); }
+        const s = await r.json();
+        if (s.status === 'paid') { save(game, { ...o, ...s }); return showDone({ ...o, ...s }); }
+        if (s.status === 'expired' || o.expires < Date.now() / 1000 - 60) { save(game, null); stop(); return step('expired'); }
+      } catch {}
+      watch(o);
+    }, document.hidden ? 8000 : 3000);
+  }
+  async function order() {
+    const err = $('pix-err'), btn = $('pix-go');
+    err.hidden = true;
+    const name = $('pix-name').value.trim(), email = $('pix-email').value.trim();
+    if (name.length < 2) { err.textContent = ERR.bad_name; err.hidden = false; return $('pix-name').focus(); }
+    if (!$('pix-email').checkValidity() || !email.includes('.')) { err.textContent = ERR.bad_email; err.hidden = false; return $('pix-email').focus(); }
+    btn.disabled = true; btn.textContent = 'Gerando o PIX…';
+    try {
+      const r = await fetch(api + '/order', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ game, name, email }) });
+      const o = await r.json();
+      if (!r.ok) throw new Error(o.error);
+      o.email = email;
+      try { localStorage.setItem('kstore:buyer', JSON.stringify({ name, email })) } catch {}
+      save(game, o);
+      showPay(o);
+    } catch (e) {
+      err.textContent = ERR[e.message] || 'Não deu para gerar o PIX agora. Tente de novo, ou escreva para contato@kolja.com.br.';
+      err.hidden = false;
+    } finally { btn.disabled = false; btn.textContent = 'Pagar com PIX'; }
+  }
+
   document.querySelectorAll('[data-buy]').forEach(b => b.addEventListener('click', e => {
     if (!dlg.showModal) return;
     e.preventDefault();
-    document.getElementById('pix-title').textContent = b.dataset.name + ' · ' + b.dataset.price;
-    document.getElementById('pix-mail').href = b.href;
+    game = b.dataset.buy;
+    $('pix-title').textContent = b.dataset.name + ' · ' + b.dataset.price;
+    $('pix-mail').href = b.href;
+    stop();
+    if (!api) step('manual');
+    else {
+      const o = saved(game);
+      if (o && o.status === 'paid') showDone(o);
+      else if (o && o.expires > Date.now() / 1000) showPay(o);
+      else {
+        save(game, null);
+        let who = {}; try { who = JSON.parse(localStorage.getItem('kstore:buyer')) || {} } catch {}
+        if (who.name && !$('pix-name').value) $('pix-name').value = who.name;
+        if (who.email && !$('pix-email').value) $('pix-email').value = who.email;
+        $('pix-err').hidden = true;
+        step('form');
+      }
+    }
     dlg.showModal();
   }));
+  dlg.querySelector('form').addEventListener('submit', e => {
+    if (e.submitter && e.submitter.value === 'cancel') return;
+    e.preventDefault();
+    if (!dlg.querySelector('[data-step=form]').hidden) order();
+  });
+  dlg.addEventListener('close', stop);
+  $('pix-again').addEventListener('click', () => { save(game, null); step('form'); });
+  dlg.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', async () => {
+    const f = $(b.dataset.copy), was = b.textContent;
+    f.select();
+    try { await navigator.clipboard.writeText(f.value) } catch { document.execCommand('copy') }
+    b.textContent = 'Copiado!'; setTimeout(() => b.textContent = was, 1600);
+  }));
+
   // Quem chega por #retrotv vê a resposta aberta.
   const openHash = () => { const d = location.hash && document.querySelector('details' + location.hash); if (d) d.open = true; };
   addEventListener('hashchange', openHash); openHash();
