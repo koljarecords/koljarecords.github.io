@@ -26,6 +26,8 @@ the copy to edit.
 
 ## Product distribution policy
 
-**NO FREE PRODUCT DOWNLOADS** (owner decision, 2026-10-27). Commercial apps, games, OS/VM images, packages and licenses must require server-verified payment for the correct order/product. No free/demo/trial/PWYW-with-skip offer without specific new owner approval. Keep product binaries in private storage; do not publish them in this Pages repository or public GitHub releases. Images, storefront scripts and normal previews remain public.
+**PAID PRODUCTS REQUIRE VERIFIED PAYMENT** (owner decision, 2026-10-27 12:48; exception at 12:54). Commercial apps, games, OS/VM images, packages and licenses must require server-verified payment for the correct order/product. No free/demo/trial/PWYW-with-skip offer without specific new owner approval. Keep product binaries in private storage; do not publish them in this Pages repository or public GitHub releases. Images, storefront scripts and normal previews remain public.
 
 If payment authorization or lawful redistribution is not ready, disable delivery and checkout together. Preserve required third-party notices and source availability obligations; do not use secrecy to override open-source licenses. Retrotv remains personal use only. Kölja OS and Tijolinho are unavailable pending compliant paid delivery. Production verification must cover copied/old URLs and CDN caches, not only hidden buttons.
+
+**Explicit exception: Nightmare Engine remains free and publicly accessible on itch.io.** Preserve its free price, listing, download access and Games-page link. The 12:54 owner instruction overrides the earlier blanket restriction for this product only. Kölja OS is not included in this exception. Guest buyers of paid products may use secure authorized links without creating an account.

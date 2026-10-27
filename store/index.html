@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="store.css">
-<script src="store.js" defer></script>
+<script src="store.js?v=20261027-secure-downloads" defer></script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -138,6 +138,7 @@
       <p class="order__wait" aria-live="polite"><span id="pix-wait">Esperando confirmação do pagamento</span><b id="pix-timer"></b></p>
       <p class="order__note">Mantenha esta janela aberta. Se fechar, toque em Comprar de novo no mesmo navegador para retomar. Sua compra aparece aqui após a confirmação; guarde seu comprovante.</p>
     </div>
+    <div data-step="recover" hidden><p role="status">Verificando sua compra e atualizando a entrega…</p></div>
     <div data-step="done" hidden>
       <p class="order__paid" role="status">Pagamento confirmado.</p><p id="pix-sent">Copie e guarde sua licença.</p>
       <div id="pix-license-content"><textarea id="pix-lic" readonly aria-label="Código de licença"></textarea>

@@ -49,11 +49,11 @@
   }
   function showDone(o) {
     stop(); step('done'); recovery(o);
-    const download = o.delivery === 'download' && /^\/download\/[a-f0-9]{24}$/.test(o.download || '');
+    const download = o.delivery === 'download' && /^\/download\/[a-f0-9]{24}(?:\?expires=\d+&signature=[a-f0-9]{64})?$/.test(o.download || '');
     $('pix-license-content').hidden = !!download;
     $('pix-download-content').hidden = !download;
     if (download) {
-      $('pix-sent').textContent = 'Seu APK está disponível. Baixe e guarde o arquivo e o link de recuperação.';
+      $('pix-sent').textContent = 'Seu APK está disponível. O link de download dura 15 minutos; guarde o link de recuperação para baixar novamente.';
       $('pix-download').href = api + o.download;
       const r = o.release;
       $('pix-release').textContent = r.filename + ' · versão ' + r.version + ' · ' + r.platform + ' · ' + (r.size / 1024 / 1024).toFixed(2) + ' MB · SHA-256: ' + r.sha256;
@@ -68,6 +68,30 @@
     else { sent.textContent = 'Este é o seu código de licença. Uma cópia foi para '; sent.append(to, '.'); }
     $('pix-keep').hidden = o.mail !== true;
   }
+  // Local storage remembers the private order ID, never proof of payment.
+  async function refreshPaid(o) {
+    const orderGame = game, epoch = lifecycle;
+    step('recover');
+    try {
+      const r = await fetch(api + '/order/' + o.order, { cache: 'no-store' });
+      if (!r.ok) throw new Error('recovery');
+      const fresh = await r.json();
+      if (!dlg.open || game !== orderGame || epoch !== lifecycle) return false;
+      if (fresh.game !== orderGame || fresh.order !== o.order) throw new Error('recovery');
+      save(orderGame, fresh);
+      if (fresh.status === 'paid') { showDone(fresh); return true; }
+      if (fresh.status === 'pending') showPay(fresh);
+      else step('expired');
+    } catch {
+      if (dlg.open && game === orderGame && epoch === lifecycle) step('expired');
+    }
+    return false;
+  }
+  $('pix-download').addEventListener('click', async e => {
+    e.preventDefault();
+    const o = saved(game);
+    if (o && await refreshPaid(o)) location.assign($('pix-download').href);
+  });
   function watch(o) {
     const watchedGame = game, epoch = lifecycle;
     clearTimeout(poll);
@@ -128,7 +152,7 @@
     if (!api) step('manual');
     else {
       const o = saved(game);
-      if (o && o.status === 'paid') showDone(o);
+      if (o && o.status === 'paid') refreshPaid(o);
       // A locally expired order may already be paid. Ask the server before discarding it.
       else if (o && o.order) showPay(o);
       else {
