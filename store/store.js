@@ -23,8 +23,15 @@
     // Screen-reader feedback for asynchronous payment transitions.
     if (dlg.open && ['done', 'expired'].includes(s)) { const content = dlg.querySelector('[data-step=' + s + ']'); content.tabIndex = -1; content.focus(); }
   };
-  const saved = g => { try { return JSON.parse(localStorage.getItem('kstore:' + g)) } catch { return null } };
-  const save = (g, o) => { try { o ? localStorage.setItem('kstore:' + g, JSON.stringify(o)) : localStorage.removeItem('kstore:' + g) } catch {} };
+  const memoryOrders = new Map();
+  const saved = g => {
+    if (memoryOrders.has(g)) return memoryOrders.get(g);
+    try { return JSON.parse(localStorage.getItem('kstore:' + g)) } catch { return null }
+  };
+  const save = (g, o) => {
+    memoryOrders.set(g, o || null);
+    try { o ? localStorage.setItem('kstore:' + g, JSON.stringify(o)) : localStorage.removeItem('kstore:' + g) } catch {}
+  };
   const stop = () => { lifecycle++; clearTimeout(poll); clearInterval(tick); poll = tick = null; };
 
   function recovery(o) {
