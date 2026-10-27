@@ -3,673 +3,149 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kölja Store · Jogos para a Retrotv</title>
-<meta name="description" content="Cartuchos da Kölja Games para a Retrotv: jogos pequenos, feitos à mão, que rodam na TV do celular e no computador. Pague uma vez com PIX e o jogo é seu para sempre.">
-<meta property="og:title" content="Kölja Store">
-<meta property="og:description" content="Jogos para a Retrotv. Pague com PIX, é seu para sempre.">
-<meta property="og:image" content="https://kolja.com.br/store/media/tijolinho-title.jpg">
+<title>Kölja Store · Apps, jogos e outros mundos</title>
+<meta name="description" content="Conheça os apps retrô, jogos e sistemas da Kölja. Cobrinha e Mal da Serra com PIX; imagens reais, requisitos claros e novidades em desenvolvimento.">
+<meta property="og:title" content="Kölja Store · Dê play em outra época">
+<meta property="og:description" content="Apps retrô, jogos independentes e sistemas experimentais. Conheça o catálogo Kölja.">
+<meta property="og:image" content="https://kolja.com.br/store/media/maldaserra-patio.jpg">
 <meta property="og:url" content="https://kolja.com.br/store/">
-<meta name="theme-color" content="#0a0a0a">
+<meta name="theme-color" content="#9e302c">
 <link rel="canonical" href="https://kolja.com.br/store/">
 <link rel="icon" href="../games/assets/brand/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../games/assets/studio.css">
-<style>
-  /* A Kölja Store é uma locadora de bairro, à noite: toldo listrado, letreiro, a TV-14 no balcão,
-     a prateleira de cartuchos, o cupom do caixa e a porta de aço. Tudo desenhado aqui em CSS/SVG. */
-  :root {
-    --red: #a8302a; --red-hi: #c63c32; --cream: #f4ecdd; --paper: #f1e7d3; --ink-text: #221c16;
-    --wood: #6b4524; --wood-dk: #3c2513; --amber: #ffb547; --tag: #ffd23f; --leaf: #3f9a4f;
-    --marker: "Permanent Marker", "Comic Sans MS", cursive;
-    --wrap: 1200px;
-  }
-  body { background: #0d0b09; }
-  .nav { background: rgba(13, 11, 9, .96); box-shadow: 0 1px 0 rgba(242,238,230,.06); } /* solid: nothing reads through it while scrolling */
-  .wrap { max-width: var(--wrap); margin: 0 auto; }
-  main > section { padding: 0; } /* studio.css pads every section; this page spaces its own */
-  main > section.wrap { padding-inline: var(--gutter); }
-  .marker { font-family: var(--marker); font-weight: 400; }
-
-  /* ---------- fachada ---------- */
-  .front { position: relative; padding-top: 58px !important; overflow: hidden;
-    background:
-      linear-gradient(rgba(13,11,9,.1), rgba(13,11,9,.55) 60%, #0d0b09 92%),
-      repeating-linear-gradient(0deg, transparent 0 33px, rgba(0,0,0,.35) 33px 36px),
-      repeating-linear-gradient(90deg, transparent 0 76px, rgba(0,0,0,.28) 76px 79px),
-      #1d1713; }
-  .awning { position: relative; height: 62px; background: repeating-linear-gradient(90deg, var(--red) 0 48px, var(--cream) 48px 96px); box-shadow: inset 0 18px 22px rgba(0,0,0,.35); }
-  .awning::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 24px;
-    background: repeating-linear-gradient(90deg, #8f2822 0 48px, #d9cfbd 48px 96px);
-    -webkit-mask: radial-gradient(circle 24px at 24px 0, #000 23px, transparent 24px) 0 0 / 48px 24px repeat-x;
-            mask: radial-gradient(circle 24px at 24px 0, #000 23px, transparent 24px) 0 0 / 48px 24px repeat-x;
-    filter: drop-shadow(0 8px 6px rgba(0,0,0,.45)); }
-
-  .front__in { display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: clamp(36px, 6vw, 96px); align-items: start; padding: 86px var(--gutter) 70px; }
-
-  .sign { display: inline-block; background: #17120e; padding: 12px; border-radius: 10px; box-shadow: 0 0 0 2px #2b221b, 0 24px 50px rgba(0,0,0,.6); transform: rotate(-1.2deg); }
-  .sign__panel { background: radial-gradient(120% 140% at 50% 40%, #fffaf0, var(--cream) 55%, #e2d4bb); border-radius: 4px; padding: 26px 34px 20px; box-shadow: 0 0 40px rgba(255,236,200,.22), inset 0 0 0 3px rgba(0,0,0,.06); }
-  .sign h1 { font: 900 clamp(68px, 9.4vw, 138px)/.92 var(--display); text-transform: uppercase; letter-spacing: .015em; color: var(--red-hi); text-shadow: 3px 3px 0 #2b1b14; padding-top: .08em; }
-  .sign h1 span { display: block; color: #1f1a16; text-shadow: 3px 3px 0 var(--red); }
-  .front__copy { margin-top: 44px; max-width: 34em; }
-  .front__hand { font: 400 clamp(22px, 2.3vw, 30px)/1.25 var(--marker); color: var(--tag); transform: rotate(-1deg); }
-  .front__copy p + p { margin-top: 18px; }
-  .front__text { color: var(--bone-2); font-size: 17px; }
-  .front__links { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; }
-
-  .btn-tag { display: inline-flex; align-items: center; gap: 10px; font: 800 18px/1 var(--display); letter-spacing: .05em; text-transform: uppercase; color: #fff; background: var(--ember); padding: 13px 16px 12px; white-space: nowrap; border: 0; border-radius: 3px; box-shadow: 3px 4px 0 #1a120d; cursor: pointer; transition: transform .15s, box-shadow .15s; }
-  .btn-tag:hover { transform: translate(-1px, -2px); box-shadow: 4px 6px 0 #1a120d; }
-  .btn-tag:active { transform: translate(2px, 3px); box-shadow: 1px 1px 0 #1a120d; }
-  .btn-tag--ink { background: var(--ink-text); color: var(--cream); }
-  .btn-tag--leaf { background: transparent; color: #24642f; box-shadow: inset 0 0 0 2px #2f7a3b; }
-  .btn-tag--leaf:hover { box-shadow: inset 0 0 0 2px #24642f, 2px 3px 0 rgba(0,0,0,.15); }
-  .link-u { color: var(--bone); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
-  .link-u:hover { color: var(--tag); }
-
-  /* placa ABERTO pendurada no toldo */
-  .open-sign { position: absolute; right: max(var(--gutter), calc((100vw - var(--wrap)) / 2 + var(--gutter))); top: 120px; width: 132px; transform-origin: 50% -46px; animation: sway 6s ease-in-out infinite; z-index: 2; }
-  .open-sign::before, .open-sign::after { content: ""; position: absolute; top: -46px; width: 2px; height: 50px; background: #b9b0a0; }
-  .open-sign::before { left: 24px; transform: rotate(12deg); }
-  .open-sign::after { right: 24px; transform: rotate(-12deg); }
-  .open-sign div { background: #e9dcc2; color: var(--red); border-radius: 4px; padding: 10px 8px 9px; text-align: center; box-shadow: 0 10px 18px rgba(0,0,0,.5); font: 400 30px/1 var(--marker); }
-  .open-sign small { display: block; font: 600 10px/1.3 var(--mono); letter-spacing: .12em; color: #5a4a3a; margin-top: 6px; text-transform: uppercase; }
-  @keyframes sway { 0%, 100% { transform: rotate(-2.5deg); } 50% { transform: rotate(2deg); } }
-
-  /* ---------- a TV-14 ---------- */
-  .tv { position: relative; margin: 96px 0 0; }
-  .tv__ant { position: absolute; top: -86px; left: 50%; width: 3px; height: 112px; background: linear-gradient(#e7e2d8, #8c867c); transform-origin: 50% 100%; border-radius: 2px; }
-  .tv__ant::before { content: ""; position: absolute; top: -6px; left: -4px; width: 11px; height: 11px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #fff, #9a948a); }
-  .tv__ant--l { transform: translateX(-30px) rotate(-38deg); }
-  .tv__ant--r { transform: translateX(26px) rotate(31deg); }
-  .tv__dome { position: absolute; top: 14px; left: 50%; width: 76px; height: 30px; margin-left: -38px; border-radius: 40px 40px 0 0; background: radial-gradient(circle at 40% 30%, #3a3633, #121110); }
-  .tv__cab { position: relative; margin-top: 36px; border-radius: 26px; padding: 18px 18px 20px;
-    background: repeating-linear-gradient(93deg, rgba(0,0,0,.08) 0 3px, transparent 3px 11px), linear-gradient(160deg, #8a5a30, var(--wood) 40%, var(--wood-dk));
-    box-shadow: 0 40px 80px rgba(0,0,0,.65), inset 0 0 0 1px rgba(255,255,255,.12), inset 0 -6px 14px rgba(0,0,0,.35); }
-  .tv__face { background: #15120f; border-radius: 16px; padding: 14px 14px 16px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); }
-  .tv__bezel { border-radius: 30px / 26px; padding: 16px; background: radial-gradient(130% 120% at 50% 0%, #2a2724, #0c0b0a 70%); box-shadow: inset 0 0 0 2px rgba(201,168,109,.55); }
-  .tv__glass { position: relative; aspect-ratio: 4 / 3; border-radius: 22px / 18px; overflow: hidden; background: #000; }
-  .tv__glass > * { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; opacity: 0; transition: opacity .12s; }
-  .tv__glass > .on { opacity: 1; }
-  .tv__glass::before { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none;
-    background: repeating-linear-gradient(0deg, rgba(0,0,0,.22) 0 1px, transparent 1px 3px); }
-  .tv__glass::after { content: ""; position: absolute; inset: 0; z-index: 4; pointer-events: none; border-radius: inherit;
-    background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(0,0,0,.55)), linear-gradient(160deg, rgba(255,255,255,.14), transparent 35%); }
-  .tv__noise { z-index: 2; opacity: 0; background: #777 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 120px 90px; }
-  .tv__glass.zap .tv__noise { opacity: 1; animation: zap .2s steps(3) infinite; }
-  @keyframes zap { 0% { background-position: 0 0; } 50% { background-position: -40px 30px; } 100% { background-position: 50px -20px; } }
-  .tv__eyes { background: #050404; display: grid; place-items: center; }
-  .tv__eyes svg { width: 34%; height: auto; image-rendering: pixelated; animation: blink 4s steps(1) infinite; }
-  @keyframes blink { 0%, 86%, 92%, 100% { opacity: 1; } 88% { opacity: 0; } }
-  .tv__badge { width: max-content; margin: 14px auto 0; padding: 5px 14px; border: 2px solid #d9d2c4; border-radius: 4px; font: 800 17px/1 var(--display); letter-spacing: .5em; text-indent: .5em; color: #f2eee6; }
-  .tv__panel { margin-top: 14px; padding: 12px; border-radius: 10px; background: linear-gradient(#d7d4ce, #a9a59e); box-shadow: inset 0 1px 0 #fff, inset 0 -2px 0 rgba(0,0,0,.25); display: grid; grid-template-columns: 1fr 64px; gap: 12px; align-items: center; }
-  .tv__lcd { background: #2a1606; border-radius: 6px; padding: 9px 12px 8px; box-shadow: inset 0 2px 6px rgba(0,0,0,.7); min-width: 0; }
-  .tv__lcd b { display: block; font: 800 24px/1 var(--display); letter-spacing: .04em; color: var(--amber); text-shadow: 0 0 8px rgba(255,170,60,.55); white-space: nowrap; overflow: hidden; }
-  .tv__lcd small { display: block; margin-top: 5px; font: 600 10.5px/1 var(--mono); letter-spacing: .12em; color: #d98f2e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .tv__dial { width: 64px; height: 64px; border-radius: 50%; background: repeating-conic-gradient(#8d8a84 0 4deg, #c9c6c0 4deg 8deg); box-shadow: 0 3px 6px rgba(0,0,0,.4); display: grid; place-items: center; transition: transform .4s; }
-  .tv__dial::after { content: ""; width: 16px; height: 44px; border-radius: 8px; background: linear-gradient(90deg, #6e6b66, #bdb9b2 50%, #6e6b66); box-shadow: inset 0 6px 0 var(--red-hi); }
-  .tv__keys { margin-top: 12px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-  .tv__keys span { background: linear-gradient(#f5efe2, #ddd3c0); color: #2b241c; border-radius: 4px; padding: 11px 0 10px; text-align: center; font: 800 13px/1 var(--display); letter-spacing: .06em; box-shadow: 0 3px 0 #8f8574, 0 5px 6px rgba(0,0,0,.45); }
-  .tv__grille { margin-top: 14px; height: 54px; border-radius: 8px; position: relative; background: repeating-linear-gradient(90deg, #6a4122 0 7px, #1a110b 7px 12px); box-shadow: inset 0 0 0 1px rgba(0,0,0,.6), inset 0 6px 10px rgba(0,0,0,.5); }
-  .tv__model { position: absolute; right: 10px; bottom: 9px; background: #0e0c0a; border: 2px solid #d9d2c4; border-radius: 4px; padding: 4px 8px; font: 800 12px/1 var(--display); letter-spacing: .22em; color: #f2eee6; display: flex; gap: 6px; align-items: center; }
-  .tv__model i { width: 7px; height: 9px; display: inline-block; }
-  .tv__model i:nth-of-type(1) { background: #e33b2f; } .tv__model i:nth-of-type(2) { background: #3cb44b; } .tv__model i:nth-of-type(3) { background: #3a6fe0; margin-right: 2px; }
-  .tv figcaption { margin-top: 18px; text-align: center; font: 500 11px/1.5 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--bone-3); }
-
-  /* ---------- prateleira ---------- */
-  .head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 26px; margin-bottom: 40px; }
-  .head h2 { font: 900 clamp(46px, 6vw, 80px)/1.04 var(--display); text-transform: uppercase; letter-spacing: .01em; }
-  .head .marker { font-size: clamp(18px, 1.8vw, 22px); color: var(--tag); }
-  .head .marker a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
-  .shelf { padding-top: 70px !important; padding-bottom: 130px !important; }
-  .rack { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 0; row-gap: 56px; }
-  .item { display: flex; flex-direction: column; scroll-margin-top: 90px; }
-  .slot { position: relative; height: 380px; display: grid; place-items: end center; padding-bottom: 20px; perspective: 900px;
-    background: linear-gradient(transparent calc(100% - 22px), #8a5a30 calc(100% - 22px), var(--wood) calc(100% - 10px), var(--wood-dk) 100%); }
-  .slot::after { content: ""; position: absolute; left: 0; right: 0; bottom: -18px; height: 18px; background: linear-gradient(rgba(0,0,0,.55), transparent); }
-
-  .box { position: relative; width: 236px; aspect-ratio: 236 / 330; transform-style: preserve-3d; transform: rotateY(24deg); transform-origin: 50% 100%; transition: transform .5s cubic-bezier(.16,1,.3,1); }
-  .item:hover .box, .item:target .box, .item:focus-within .box { transform: rotateY(8deg) translateY(-10px); }
-  .box__front { position: absolute; inset: 0; display: flex; flex-direction: column; background: #111; border-radius: 3px; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
-  .box__spine { position: absolute; top: 0; bottom: 0; left: 0; width: 30px; transform-origin: 0 50%; transform: rotateY(90deg); background: var(--spine, #333); display: flex; align-items: center; justify-content: center; filter: brightness(.72); border-radius: 2px; }
-  .box__spine span { writing-mode: vertical-rl; transform: rotate(180deg); font: 900 17px/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--spine-ink, #fff); }
-  .box::after { content: ""; position: absolute; left: 6%; right: -4%; bottom: -10px; height: 16px; border-radius: 50%; background: rgba(0,0,0,.6); filter: blur(7px); transform: translateZ(-40px); }
-  .box__strip { display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; background: #f2eee6; color: #111; font: 800 12px/1 var(--display); letter-spacing: .2em; }
-  .box__strip i { display: inline-flex; gap: 3px; } .box__strip i::before, .box__strip i::after, .box__strip i b { content: ""; width: 6px; height: 8px; display: inline-block; }
-  .box__strip i::before { background: #e33b2f; } .box__strip i b { background: #3cb44b; } .box__strip i::after { background: #3a6fe0; }
-  .box__art { position: relative; aspect-ratio: 4 / 3; background: #000; }
-  .box__art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; transition: opacity .4s; }
-  .box__art img + img { opacity: 0; }
-  .item:hover .box__art img + img, .item:focus-within .box__art img + img { opacity: 1; }
-  .box__name { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 10px 14px 12px; background: var(--cover); color: var(--cover-ink); }
-  .box__name b { font: 900 38px/1 var(--display); text-transform: uppercase; letter-spacing: .02em; }
-  .box__name small { margin-top: 11px; font: 600 10px/1.2 var(--mono); letter-spacing: .14em; text-transform: uppercase; opacity: .85; }
-  .box--tijolinho { --cover: #1a1a3a; --cover-ink: #f2c94c; --spine: #f2c94c; --spine-ink: #1a1a3a; }
-  .box--cobrinha { --cover: #0f2a19; --cover-ink: #7fe08a; --spine: #3f9a4f; --spine-ink: #071a0d; }
-  .box--maldaserra { --cover: #140707; --cover-ink: #e6dcc4; --spine: #0b0a10; --spine-ink: #d6d0ff; }
-  /* ÓRBITA discs come in a disc case: black strip with the orbit mark, a clear hinge, the disc standing behind */
-  .box--k32 .box__strip { background: #0b0a10; color: #d6d0ff; padding: 7px 10px; }
-  .box--k32 .box__strip svg { width: 15px; height: 15px; }
-  .box--k32 .box__strip em { font-style: normal; color: #8f86d8; }
-  .box--k32 .box__front::after { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 9px; background: linear-gradient(90deg, rgba(255,255,255,.22), rgba(255,255,255,.05) 60%, rgba(0,0,0,.35)); }
-  .box--k32 .box__name small b { font: inherit; color: #b9b0ff; }
-  .box--k32 .box__art { overflow: hidden; }
-  .box--k32 .box__art img { transform: scale(1.2); transform-origin: 50% 0; } /* the cover leaves the game's ammo panel out */
-  .disc { position: absolute; top: -58px; right: -34px; width: 150px; aspect-ratio: 1; border-radius: 50%; transform: translateZ(-14px) rotate(-8deg);
-    background: radial-gradient(circle, #0b0a10 0 9%, #d8d3ef 9.5% 15%, rgba(255,255,255,.35) 15.5% 17%, transparent 17.5%),
-      repeating-radial-gradient(circle, rgba(255,255,255,0) 0 3px, rgba(255,255,255,.07) 3px 4px),
-      conic-gradient(from 40deg, #9fb0ff, #ffb3e0, #9ff0d8, #ffe48f, #b9a2ff, #9fb0ff);
-    box-shadow: 0 0 0 1px rgba(255,255,255,.25) inset, 0 8px 18px rgba(0,0,0,.55); transition: transform .5s cubic-bezier(.16,1,.3,1); }
-  .disc::after { content: ""; position: absolute; inset: 22%; border-radius: 50%; box-shadow: 0 0 0 1px rgba(255,255,255,.28), 0 0 0 14px rgba(255,255,255,.07); }
-  .item:hover .disc, .item:focus-within .disc { transform: translateZ(-14px) translateY(-14px) rotate(24deg); }
-  .card__shots { margin-top: 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; flex: none; }
-  .card__shots a { display: block; border: 2px solid #2a2320; background: #000; aspect-ratio: 4 / 3; overflow: hidden; }
-  .card__shots img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; display: block; }
-  .card__shots a:hover, .card__shots a:focus-visible { border-color: #8a2a24; }
-  .box--soon { --cover: #000; --cover-ink: #e6e0d4; --spine: #1b1716; --spine-ink: #8a2a24; }
-  .box--soon .box__art { display: grid; place-items: center; background: radial-gradient(circle at 50% 55%, #1d0a08, #000 70%); }
-  .box--soon .box__art svg { width: 46%; image-rendering: pixelated; animation: blink 5s steps(1) infinite; }
-  .tape { position: absolute; left: -16px; right: -16px; top: 46%; z-index: 2; transform: rotate(-9deg) translateZ(2px); background: rgba(232, 214, 160, .94); color: #3a2a1a; text-align: center; font: 400 22px/1 var(--marker); padding: 9px 0 7px; box-shadow: 0 2px 4px rgba(0,0,0,.35); }
-
-  .sticker { position: absolute; z-index: 5; display: grid; place-items: center; text-align: center; transform: rotate(-11deg); pointer-events: none; box-shadow: none; }
-  .sticker--price { top: 118px; right: calc(50% - 176px); width: 92px; height: 92px; background: var(--tag); color: #2a1a00; font: 400 22px/1 var(--marker); clip-path: polygon(50% 0, 60% 13%, 75% 6%, 78% 22%, 94% 25%, 87% 40%, 100% 50%, 87% 60%, 94% 75%, 78% 78%, 75% 94%, 60% 87%, 50% 100%, 40% 87%, 25% 94%, 22% 78%, 6% 75%, 13% 60%, 0 50%, 13% 40%, 6% 25%, 22% 22%, 25% 6%, 40% 13%); }
-  .sticker--free { top: 124px; right: calc(50% - 166px); width: 80px; height: 80px; border-radius: 50%; background: var(--leaf); color: #fff; font: 400 18px/1 var(--marker); box-shadow: inset 0 0 0 3px rgba(255,255,255,.35); }
-  .sticker--long { font-size: 18px; }
-  .sticker small { display: block; font: 600 9px/1 var(--mono); letter-spacing: .12em; margin-top: 4px; }
-
-  .card { position: relative; margin: 44px 16px 0; padding: 24px 22px 22px; flex: 1; display: flex; flex-direction: column; color: var(--ink-text); border-radius: 2px;
-    background: linear-gradient(transparent 68px, #d9524a 68px 70px, transparent 70px), var(--paper);
-    box-shadow: 0 14px 30px rgba(0,0,0,.45); }
-  .card::before { content: ""; position: absolute; top: -10px; left: 50%; width: 56px; height: 20px; margin-left: -28px; background: rgba(232, 214, 160, .85); transform: rotate(-3deg); }
-  .item:nth-child(2) .card { transform: rotate(.6deg); } .item:nth-child(1) .card { transform: rotate(-.5deg); } .item:nth-child(3) .card { transform: rotate(.3deg); }
-  .card h3 { font: 900 30px/1 var(--display); text-transform: uppercase; letter-spacing: .02em; }
-  .card .card__meta { margin-top: 30px; flex: none; font: 600 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: #6b5a48; }
-  .card p { margin-top: 12px; font-size: 15.5px; line-height: 1.6; color: #3a3129; flex: 1; }
-  .card__buy { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
-  .card__price { font: 900 34px/1 var(--display); letter-spacing: .01em; }
-  .card__price--free { color: #24642f; }
-  .card__note { font: 400 19px/1.2 var(--marker); color: #8a2a24; }
-
-  /* ---------- caixa ---------- */
-  .till { padding-bottom: 140px !important; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(36px, 7vw, 110px); align-items: start; }
-  .till__side p { color: var(--bone-2); max-width: 30em; }
-  .till__side p + p { margin-top: 16px; }
-  .till__side .marker { color: var(--tag); font-size: 21px; line-height: 1.3; }
-  .receipt { position: relative; max-width: 520px; background: #f6f1e6; color: #2a2620; padding: 34px 34px 40px; font: 400 14px/1.65 var(--mono); transform: rotate(.6deg); box-shadow: 0 24px 50px rgba(0,0,0,.5);
-    -webkit-mask: radial-gradient(circle 7px at 50% 0, transparent 6px, #000 7px) 0 0 / 18px 51% repeat-x, radial-gradient(circle 7px at 50% 100%, transparent 6px, #000 7px) 0 100% / 18px 51% repeat-x;
-            mask: radial-gradient(circle 7px at 50% 0, transparent 6px, #000 7px) 0 0 / 18px 51% repeat-x, radial-gradient(circle 7px at 50% 100%, transparent 6px, #000 7px) 0 100% / 18px 51% repeat-x; }
-  .receipt__top { text-align: center; padding-bottom: 14px; border-bottom: 2px dashed #b9b0a0; }
-  .receipt__top b { display: block; font: 900 30px/1 var(--display); letter-spacing: .12em; text-indent: .12em; }
-  .receipt__top span { display: block; margin-top: 6px; font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; color: #6b6458; }
-  .receipt ol { list-style: none; margin: 8px 0 0; }
-  .receipt li { display: grid; grid-template-columns: 36px 1fr; padding: 14px 0; border-bottom: 1px dotted #c8bfae; }
-  .receipt li > span { font-weight: 600; }
-  .receipt li b { display: block; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
-  .receipt li p { color: #4a443b; }
-  .receipt a { text-decoration: underline; text-underline-offset: 3px; }
-  .receipt kbd { font: 600 12.5px var(--mono); background: #e7dfcf; padding: 1px 5px; border-radius: 3px; white-space: nowrap; }
-  .receipt__end { margin-top: 16px; display: flex; justify-content: space-between; gap: 12px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #6b6458; }
-  .stamp { display: inline-block; margin-top: 26px; padding: 9px 14px 7px; border: 3px double #b8352c; border-radius: 6px; color: #b8352c; font: 800 18px/1.05 var(--display); letter-spacing: .1em; text-transform: uppercase; transform: rotate(-5deg); opacity: .88; mix-blend-mode: multiply; }
-  html:not(.pix-on) .if-pix, .pix-on .if-manual { display: none !important; }
-  .stamp small { display: block; font: 600 10px/1.3 var(--mono); letter-spacing: .12em; }
-
-  /* ---------- balcão ---------- */
-  .counter { padding-bottom: 130px !important; }
-  .counter__top { height: 26px; border-radius: 4px 4px 0 0; background: repeating-linear-gradient(91deg, rgba(0,0,0,.1) 0 3px, transparent 3px 13px), linear-gradient(#8a5a30, var(--wood) 55%, var(--wood-dk)); box-shadow: 0 10px 20px rgba(0,0,0,.45); }
-  .counter__body { background: #17120f; border: 1px solid #2a211a; border-top: 0; padding: clamp(28px, 4vw, 50px); display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(28px, 5vw, 70px); }
-  .counter h2 { font: 900 clamp(40px, 4.6vw, 60px)/1.06 var(--display); text-transform: uppercase; }
-  .counter h2 + p { margin-top: 18px; color: var(--bone-2); font-size: 15.5px; }
-  .counter h2 + p a { color: var(--bone); text-decoration: underline; text-underline-offset: 3px; }
-  .faq details { border-bottom: 1px dashed rgba(242,238,230,.18); padding: 16px 0; scroll-margin-top: 90px; }
-  .faq details:first-child { padding-top: 0; }
-  .faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 18px; font-weight: 500; font-size: 17px; }
-  .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after { content: "+"; font: 400 22px/1 var(--marker); color: var(--tag); }
-  .faq details[open] summary::after { content: "–"; }
-  .faq details p { margin-top: 10px; color: var(--bone-2); font-size: 15.5px; max-width: 36em; }
-  .faq details a { color: var(--bone); text-decoration: underline; text-underline-offset: 3px; }
-
-  /* ---------- porta de aço ---------- */
-  .shutter { position: relative; padding: 70px var(--gutter) 64px; text-align: center;
-    background: repeating-linear-gradient(#8b8984 0 3px, #5d5b57 3px 5px, #a3a19b 5px 16px, #6f6d68 16px 22px); box-shadow: inset 0 14px 20px rgba(0,0,0,.5); }
-  .shutter::after { content: ""; position: absolute; left: 50%; bottom: 18px; width: 90px; height: 12px; margin-left: -45px; border-radius: 6px; background: #2b2a28; box-shadow: inset 0 2px 0 rgba(255,255,255,.2); }
-  .shutter p { font: 400 clamp(20px, 2.4vw, 28px)/1.2 var(--marker); color: #1d1a17; }
-  .shutter a { display: inline-block; margin-top: 10px; font: 400 clamp(28px, 4.4vw, 52px)/1.1 var(--marker); color: #b3261e; text-shadow: 1px 1px 0 rgba(255,255,255,.25); word-break: break-word; }
-  .shutter a:hover { color: #7d140f; }
-  .fine { padding: 22px var(--gutter) 28px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-
-  /* ---------- pedido (diálogo) ---------- */
-  .order { margin: auto; border: 0; padding: 0; width: min(440px, 92vw); background: #f6f1e6; color: #2a2620; border-radius: 3px; box-shadow: 0 30px 90px rgba(0,0,0,.7); }
-  .order::backdrop { background: rgba(0,0,0,.72); }
-  .order__in { padding: 28px 28px 24px; display: grid; gap: 14px; font-size: 15px; }
-  .order .label { color: #6b6458; }
-  .order h3 { font: 900 34px/1 var(--display); text-transform: uppercase; }
-  .order p { color: #4a443b; }
-  .order__note { font: 400 12.5px/1.5 var(--mono); color: #6b6458 !important; border-top: 2px dashed #c8bfae; padding-top: 12px; }
-  .order .btn-tag { justify-content: center; }
-  .order [data-step] { display: grid; gap: 14px; }
-  .order [hidden] { display: none !important; }
-  .field { display: grid; gap: 6px; }
-  .field span { font: 600 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: #6b6458; }
-  .field input { font: 500 16px/1.3 var(--sans, "IBM Plex Sans", sans-serif); color: #221c16; background: #fff; border: 2px solid #c8bfae; border-radius: 3px; padding: 11px 12px; }
-  .field input:focus { outline: none; border-color: var(--ember); }
-  .order__err { font: 600 13.5px/1.45 var(--mono); color: #a8302a !important; }
-  .qr { display: block; width: min(240px, 70vw); aspect-ratio: 1; margin: 0 auto; background: #fff; padding: 10px; border: 2px dashed #6b4524; image-rendering: pixelated; }
-  .copyrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
-  .copyrow input, .order textarea { font: 500 12.5px/1.45 var(--mono); color: #221c16; background: #fff; border: 2px solid #c8bfae; border-radius: 3px; padding: 10px; min-width: 0; }
-  .order textarea { resize: none; height: 104px; word-break: break-all; }
-  .copyrow .btn-tag { font-size: 15px; padding: 10px 12px 9px; }
-  .order__wait { display: flex; align-items: center; gap: 10px; font: 600 13px/1.3 var(--mono); letter-spacing: .04em; color: #3c2513 !important; }
-  .order__wait b { margin-left: auto; font-variant-numeric: tabular-nums; }
-  .blink { width: 10px; height: 10px; border-radius: 50%; background: var(--leaf); box-shadow: 0 0 8px var(--leaf); animation: blink 1.1s steps(2, start) infinite; }
-  @keyframes blink { to { visibility: hidden; } }
-  @media (prefers-reduced-motion: reduce) { .blink { animation: none; } }
-  .order__paid { font: 400 30px/1.05 var(--marker); color: #24642f !important; transform: rotate(-1.5deg); }
-  .order__row { display: flex; gap: 10px; flex-wrap: wrap; }
-  .order__row .btn-tag { flex: 1; }
-  .order__close { justify-self: end; font: 600 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: #6b6458; background: none; border: 0; padding: 8px 2px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
-
-  @media (max-width: 1100px) {
-    .front__in { grid-template-columns: minmax(0, 1fr) 360px; }
-    .box { width: 200px; } .slot { height: 340px; }
-    .sticker--price { top: 110px; right: calc(50% - 158px); } .sticker--free { top: 116px; right: calc(50% - 148px); }
-    .box__name b { font-size: 32px; }
-  }
-  @media (max-width: 900px) {
-    .front__in { grid-template-columns: 1fr; padding-top: 64px; }
-    .tv { margin: 110px auto 0; width: min(380px, 100%); }
-    .open-sign { display: none; }
-    .rack { grid-template-columns: minmax(0, 1fr); row-gap: 70px; max-width: 460px; margin: 0 auto; }
-    .box { width: 210px; } .slot { height: 350px; }
-    .sticker--price { top: 110px; right: max(0px, calc(50% - 162px)); } .sticker--free { top: 116px; right: max(4px, calc(50% - 152px)); }
-    .till, .counter__body { grid-template-columns: 1fr; }
-    .receipt { transform: none; }
-  }
-  @media (max-width: 480px) {
-    .awning { height: 44px; }
-    .sign { display: block; }
-    .sign__panel { padding: 18px 20px 14px; }
-    .sign h1 { font-size: clamp(56px, 19vw, 84px); }
-    .front__copy { margin-top: 34px; }
-    .tv__cab { padding: 12px; border-radius: 20px; } .tv__face { padding: 10px; } .tv__bezel { padding: 10px; }
-    .tv__keys span { font-size: 11.5px; } .tv__lcd b { font-size: 20px; }
-    .card { margin: 40px 6px 0; padding: 22px 18px 20px; }
-    .receipt { padding: 28px 20px 34px; font-size: 13.5px; }
-    .receipt li { grid-template-columns: 28px 1fr; }
-    .receipt kbd { white-space: normal; }
-    .sign h1 { text-align: center; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="store.css">
+<script src="store.js" defer></script>
 </head>
 <body>
-<div class="grain" aria-hidden="true"></div>
-
-<header class="nav">
-  <a class="nav__mark" href="../games/">Kölja<span>Games</span></a>
-  <nav>
-    <a href="../">Kölja</a>
-    <a href="../games/">Games</a>
-    <a href="#jogos" class="nav__cta">Kölja Store</a>
-  </nav>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header">
+  <a class="wordmark" href="./" aria-label="Kölja Store, início">KÖLJA<span>STORE</span></a>
+  <nav aria-label="Catálogo"><a href="#apps">Apps</a><a href="#jogos">Jogos</a><a href="#sistemas">Sistemas</a></nav>
+  <a class="header-help" href="#ajuda">Ajuda <span aria-hidden="true">↗</span></a>
 </header>
-
-<main>
-  <section class="front" aria-labelledby="store-title">
-    <div class="awning" aria-hidden="true"></div>
-    <div class="open-sign" aria-hidden="true"><div>Aberto<small>até tarde</small></div></div>
-
-    <div class="wrap front__in">
-      <div>
-        <div class="sign"><div class="sign__panel"><h1 id="store-title">Kölja <span>Store</span></h1></div></div>
-        <div class="front__copy">
-          <p class="front__hand">Cartuchos para a Retrotv, a TV do seu celular.</p>
-          <p class="front__text">Jogos pequenos, feitos à mão. Eles rodam dentro da Retrotv, no MENU › JOGOS. Com a TV passando no computador, o jogo abre na tela grande e o celular vira o controle.</p>
-          <p class="front__text">Você paga uma vez e o jogo é seu, em todos os seus celulares. Sem assinatura, e sem internet para jogar.</p>
-          <div class="front__links">
-            <a class="btn-tag" href="#jogos">Ver a prateleira</a>
-            <a class="link-u" href="#retrotv">Como consigo a Retrotv?</a>
-          </div>
-        </div>
-      </div>
-
-      <figure class="tv" aria-label="A TV-14 da Retrotv mostrando os jogos da loja">
-        <span class="tv__ant tv__ant--l" aria-hidden="true"></span><span class="tv__ant tv__ant--r" aria-hidden="true"></span><span class="tv__dome" aria-hidden="true"></span>
-        <div class="tv__cab">
-          <div class="tv__face">
-            <div class="tv__bezel"><div class="tv__glass" id="glass">
-              <img class="on" src="media/tijolinho-play.jpg" alt="Tijolinho rodando: fileiras de tijolos coloridos, a bola e a raquete" width="960" height="720" data-name="Tijolinho" data-sub="Jogos · grátis">
-              <img src="media/cobrinha-mid.jpg" alt="Cobrinha rodando: a cobra verde, uma fruta vermelha e uma dourada" width="960" height="720" loading="lazy" data-name="Cobrinha" data-sub="Jogos · R$ 4,90">
-              <img src="media/maldaserra-boss.jpg" alt="Mal da Serra rodando: Helena mira no Dr. Vilela diante da fornalha da casa da caldeira" width="960" height="720" loading="lazy" data-name="Mal da Serra" data-sub="Jogos · R$ 12,90">
-              <span class="tv__noise" aria-hidden="true"></span>
-            </div></div>
-            <div class="tv__badge" aria-hidden="true">KÖLJA</div>
-            <div class="tv__panel" aria-hidden="true">
-              <div class="tv__lcd"><b id="lcd-name">TIJOLINHO</b><small id="lcd-sub">JOGOS · GRÁTIS</small></div>
-              <div class="tv__dial" id="dial"></div>
-            </div>
-            <div class="tv__keys" aria-hidden="true"><span>MENU</span><span>PAÍS</span><span>★ FAV</span><span>NO PC</span></div>
-            <div class="tv__grille" aria-hidden="true"><span class="tv__model">TV-14 <i></i><i></i><i></i>COLOR</span></div>
-          </div>
-        </div>
-        <figcaption>Retrotv · MENU › JOGOS</figcaption>
-      </figure>
+<main id="conteudo">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-intro">
+      <p class="catalog-label">Software independente · Kölja</p>
+      <h1 id="hero-title">Dê play em<br>outra época.</h1>
+      <p class="hero-desc">Jogos para se perder por umas horas.<br>Apps para reencontrar um jeito de brincar.<br>Um universo feito aqui.</p>
+      <a class="button button-light" href="#jogos">Escolher um jogo <span aria-hidden="true">↘</span></a>
+      <a class="hero-secondary" href="#apps">Explorar os apps retrô <span aria-hidden="true">→</span></a>
+      <div class="brand-frequency" aria-hidden="true"><span></span><span></span><span></span><span></span><b>K / PLAY</b></div>
+    </div>
+    <div class="hero-feature">
+      <a class="feature-screen" href="#maldaserra" aria-label="Conhecer Mal da Serra">
+        <img src="media/maldaserra-patio.jpg" alt="Cena real de Mal da Serra: Helena no pátio do sanatório, entre árvores e névoa" width="960" height="720" fetchpriority="high">
+        <span class="screen-caption">Captura do jogo <span aria-hidden="true">↗</span></span>
+      </a>
+      <div class="feature-caption"><div><span class="mono">Terror em 3D · Kölja Órbita</span><h2>Mal da Serra</h2></div><a href="#maldaserra" aria-label="Ver Mal da Serra por R$ 12,90"><b>R$ 12,90</b><span>Conhecer o jogo ↗</span></a></div>
     </div>
   </section>
 
-  <section id="jogos" class="wrap shelf" aria-labelledby="shelf-title">
-    <div class="head">
-      <h2 id="shelf-title">Na prateleira</h2>
-      <p class="marker">precisa da <a href="#retrotv">Retrotv 0.2</a> ou mais nova</p>
+  <section class="catalog-section games" id="jogos" aria-labelledby="games-title">
+    <div class="section-heading"><h2 id="games-title">A próxima partida.</h2><p>Jogos Kölja, cada um no seu ritmo.</p></div>
+    <p class="compatibility-note">Cobrinha, Tijolinho e Mal da Serra rodam dentro da Retrotv. <a href="#retrotv">Confira os requisitos antes de comprar.</a></p>
+    <article class="horror-feature" id="maldaserra">
+      <div class="horror-images">
+        <a href="media/maldaserra-ala.jpg" aria-label="Ampliar captura de Mal da Serra na ala leste"><img src="media/maldaserra-ala.jpg" alt="Helena mira em uma criatura no corredor da ala leste" width="960" height="720" loading="lazy"></a>
+        <div class="shot-strip"><a href="media/maldaserra-capela.jpg"><img src="media/maldaserra-capela.jpg" alt="Ampliar: a capela de Mal da Serra" width="960" height="720" loading="lazy"></a><a href="media/maldaserra-boss.jpg"><img src="media/maldaserra-boss.jpg" alt="Ampliar: confronto na casa da caldeira" width="960" height="720" loading="lazy"></a></div>
+      </div>
+      <div class="horror-copy">
+        <p class="product-kind">Kölja Órbita · Terror em 3D</p>
+        <h3>Mal da Serra</h3>
+        <p class="product-lede">O sanatório fechou em 1971.<br>Seu irmão entrou ontem.</p>
+        <p>Serra da Mantiqueira, 1987. Explore oito salas com câmeras fixas, resolva o enigma do relógio e cuide da pouca munição. Há algo esperando na casa da caldeira.</p>
+        <ul class="specs"><li>1 jogador</li><li>Português e inglês</li><li>Modos Normal e Calmo</li></ul>
+        <p class="requirements"><strong>Requer Retrotv 0.2.3+</strong> no Android 8+, com Mal da Serra já instalado. A compra libera o jogo; não inclui o aplicativo.</p>
+        <div class="purchase"><div><strong>R$ 12,90</strong><span>Licença · pagamento único</span></div><a class="button" href="mailto:contato@kolja.com.br?subject=Pedido%20K%C3%B6lja%20Store%3A%20Mal%20da%20Serra" data-buy="maldaserra" data-name="Mal da Serra" data-price="R$ 12,90" data-requires="Retrotv 0.2.3+ com Mal da Serra instalado">Comprar com PIX <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </article>
+    <div class="arcade-grid">
+      <article class="game" id="cobrinha">
+        <a class="game-image green" href="media/cobrinha-play.jpg" aria-label="Ampliar captura de Cobrinha"><img src="media/cobrinha-play.jpg" alt="Cobrinha em ação: cobra verde, frutas e placar sobre fundo escuro" width="960" height="720" loading="lazy"></a>
+        <div class="game-copy"><p class="product-kind">Kölja K-8 · Arcade</p><h3>Cobrinha</h3><p>Mais uma fruta. Só mais uma. Cresça, acelere e pegue a fruta dourada antes que ela desapareça.</p><p class="requirements">Android 8+ · Retrotv 0.2+ com Cobrinha instalado. Direcional ou deslizar.</p><div class="purchase"><div><strong>R$ 4,90</strong><span>Licença · pagamento único</span></div><a class="button" href="mailto:contato@kolja.com.br?subject=Pedido%20K%C3%B6lja%20Store%3A%20Cobrinha" data-buy="cobrinha" data-name="Cobrinha" data-price="R$ 4,90" data-requires="Retrotv 0.2+ com Cobrinha instalado">Comprar com PIX <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <article class="game" id="tijolinho">
+        <a class="game-image blue" href="media/tijolinho-play.jpg" aria-label="Ampliar captura de Tijolinho"><img src="media/tijolinho-play.jpg" alt="Tijolinho em ação: fileiras de blocos coloridos e uma raquete" width="960" height="720" loading="lazy"></a>
+        <div class="game-copy"><p class="product-kind">Kölja K-8 · Arcade</p><h3>Tijolinho</h3><p>Cinco fases entre você e a última fortaleza. Acerte a bola com a ponta da raquete para mudar o ângulo.</p><p class="requirements">Android 8+ · Incluído na Retrotv 0.2+. Direcional ou toque.</p><div class="purchase"><div><strong>Grátis</strong><span>Para quem já tem a Retrotv</span></div><a class="button button-outline" href="#como-jogar">Como jogar <span aria-hidden="true">→</span></a></div></div>
+      </article>
     </div>
+    <article class="coming-game" id="don-don-dojo">
+      <a href="media/don-don-dojo.jpg" aria-label="Ampliar capturas reais de Don Don Dojo"><img src="media/don-don-dojo.jpg" alt="Don Don Dojo: seleção de músicas, tambores, notas de ritmo e resultado de uma partida" width="1840" height="800" loading="lazy"></a>
+      <div><p class="product-kind">Em preparação · Android 7+</p><h3>Don Don Dojo</h3><p>Um jogo de ritmo com seis músicas, tambores e personagens próprios. A versão 1.0.1 já existe; a edição de venda ainda está em preparação.</p><p class="availability">Sem compra ou download público por enquanto.</p><a class="text-link" href="mailto:contato@kolja.com.br?subject=Interesse%20em%20Don%20Don%20Dojo">Perguntar sobre o lançamento <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </section>
 
-    <div class="rack">
-      <article class="item" id="tijolinho">
-        <div class="slot">
-          <div class="box box--tijolinho">
-            <div class="box__spine" aria-hidden="true"><span>Tijolinho</span></div>
-            <div class="box__front">
-              <div class="box__strip" aria-hidden="true"><span>KÖLJA</span><i><b></b></i><span>RETROTV</span></div>
-              <div class="box__art"><img src="media/tijolinho-title.jpg" alt="Tela de título do Tijolinho" width="960" height="720" loading="lazy"><img src="media/tijolinho-play.jpg" alt="" width="960" height="720" loading="lazy"></div>
-              <div class="box__name" aria-hidden="true"><b>Tijolinho</b><small>1 jogador · 5 fases</small></div>
-            </div>
-          </div>
-          <span class="sticker sticker--free" aria-hidden="true">Grátis</span>
-        </div>
-        <div class="card">
-          <h3>Tijolinho</h3>
-          <p class="card__meta">5 fases · direcional ou toque</p>
-          <p>Quebre todos os tijolos com a raquete. Quanto mais perto da ponta a bola bate, mais fechado é o ângulo. Os tijolos prateados aguentam duas pancadas, e a última fase é uma fortaleza.</p>
-          <div class="card__buy"><span class="card__price card__price--free">Grátis</span><a class="btn-tag btn-tag--leaf" href="#retrotv">Já vem na Retrotv</a></div>
-        </div>
+  <section class="apps-section" id="apps" aria-labelledby="apps-title">
+    <div class="section-heading"><h2 id="apps-title">Saudade de apertar botões?</h2><p>Objetos de outra época.<br>Dentro do seu Android.</p></div>
+    <div class="app-grid">
+      <article class="app retrofone" id="retrofone">
+        <div class="phone-stage"><img src="media/retrofone-menu.jpg" alt="Interface real do Retrofone: celular Kölja K-600 com teclado físico desenhado e menu de ícones" width="720" height="1600" loading="lazy"><img src="media/retrofone-snake.jpg" alt="Jogo da cobrinha na tela do Retrofone" width="720" height="1600" loading="lazy"></div>
+        <div class="app-copy"><p class="product-kind">App retrô · Android 8+</p><h3>Retrofone</h3><p>O K-600 cabe no seu celular: teclado numérico, jogos, rádio e ferramentas numa interface que dá vontade de tocar.</p><p class="requirements">Instalação por APK. Rádio e recursos de rede precisam de internet; algumas funções pedem permissões do Android.</p><div class="availability-box"><strong>Compra temporariamente indisponível</strong><p>A página do itch.io lista US$ 1,99, mas ainda não oferece compra pública. Confira a disponibilidade antes de pagar.</p><a class="text-link" href="https://koljagames.itch.io/retrofone" target="_blank" rel="noopener">Ver Retrofone no itch.io <span aria-hidden="true">↗</span><span class="sr-only"> (nova aba)</span></a></div></div>
       </article>
-
-      <article class="item" id="cobrinha">
-        <div class="slot">
-          <div class="box box--cobrinha">
-            <div class="box__spine" aria-hidden="true"><span>Cobrinha</span></div>
-            <div class="box__front">
-              <div class="box__strip" aria-hidden="true"><span>KÖLJA</span><i><b></b></i><span>RETROTV</span></div>
-              <div class="box__art"><img src="media/cobrinha-title.jpg" alt="Tela de título da Cobrinha" width="960" height="720" loading="lazy"><img src="media/cobrinha-mid.jpg" alt="" width="960" height="720" loading="lazy"></div>
-              <div class="box__name" aria-hidden="true"><b>Cobrinha</b><small>1 jogador · sem fim</small></div>
-            </div>
-          </div>
-          <span class="sticker sticker--price" aria-hidden="true"><span>R$ 4,90<small>NOVO</small></span></span>
-        </div>
-        <div class="card">
-          <h3>Cobrinha</h3>
-          <p class="card__meta">Novo · direcional ou deslizar</p>
-          <p>A cobra cresce a cada fruta e fica mais rápida a cada cinco. De vez em quando aparece uma fruta dourada que some se você demorar. Só não bata na parede nem no próprio rabo.</p>
-          <div class="card__buy"><span class="card__price">R$ 4,90</span>
-            <a class="btn-tag" href="mailto:contato@kolja.com.br?subject=Pedido%20K%C3%B6lja%20Store%3A%20Cobrinha" data-buy="cobrinha" data-name="Cobrinha" data-price="R$ 4,90">Comprar</a></div>
-        </div>
-      </article>
-
-      <article class="item" id="maldaserra">
-        <div class="slot">
-          <div class="box box--maldaserra box--k32">
-            <span class="disc" aria-hidden="true"></span>
-            <div class="box__spine" aria-hidden="true"><span>Mal da Serra</span></div>
-            <div class="box__front">
-              <div class="box__strip" aria-hidden="true"><span>KÖLJA <em>ÓRBITA</em></span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/><circle cx="17.6" cy="6.4" r="2.4" fill="currentColor"/></svg><span>32 BITS</span></div>
-              <div class="box__art"><img src="media/maldaserra-boss.jpg" alt="Mal da Serra: Helena diante da fornalha da casa da caldeira" width="960" height="720" loading="lazy"><img src="media/maldaserra-ala.jpg" alt="" width="960" height="720" loading="lazy"></div>
-              <div class="box__name" aria-hidden="true"><b>Mal da Serra</b><small>1 jogador · <b>disco</b></small></div>
-            </div>
-          </div>
-          <span class="sticker sticker--price sticker--long" aria-hidden="true"><span>R$ 12,90<small>NOVO</small></span></span>
-        </div>
-        <div class="card">
-          <h3>Mal da Serra</h3>
-          <p class="card__meta">Novo · terror em 3D · console ÓRBITA · Retrotv 0.2.3</p>
-          <p>Serra da Mantiqueira, 1987. Helena entra no Sanatório Santa Luzia, fechado desde 1971, atrás do irmão que não voltou. Oito salas com câmeras fixas, pouca munição, chaves, um relógio parado e um chefe na casa da caldeira. É o primeiro disco do KÖLJA ÓRBITA, o console 32 bits da Retrotv: o celular vira o controle, e um toque ergue a arma.</p>
-          <div class="card__shots">
-            <a href="media/maldaserra-ala.jpg"><img src="media/maldaserra-ala.jpg" alt="Helena mira num corpo-seco na ala leste" width="960" height="720" loading="lazy"></a>
-            <a href="media/maldaserra-capela.jpg"><img src="media/maldaserra-capela.jpg" alt="A capela à noite, com as freiras entre os bancos" width="960" height="720" loading="lazy"></a>
-            <a href="media/maldaserra-patio.jpg"><img src="media/maldaserra-patio.jpg" alt="O pátio do sanatório na névoa" width="960" height="720" loading="lazy"></a>
-          </div>
-          <div class="card__buy"><span class="card__price">R$ 12,90</span>
-            <a class="btn-tag" href="mailto:contato@kolja.com.br?subject=Pedido%20K%C3%B6lja%20Store%3A%20Mal%20da%20Serra" data-buy="maldaserra" data-name="Mal da Serra" data-price="R$ 12,90">Comprar</a></div>
-        </div>
+      <article class="app retroradio" id="retroradio">
+        <div class="radio-stage"><img src="media/retroradio.jpg" alt="Interface real do Retroradio R-77: mostrador de sintonia, alto-falante e controles de volume e frequência" width="720" height="1600" loading="lazy"></div>
+        <div class="app-copy"><p class="product-kind">App retrô · Android 8+</p><h3>Retroradio</h3><p>Gire o dial. Encontre uma estação. O R-77 traz sintonia, chiado e favoritos para um rádio de internet com presença de objeto.</p><p class="requirements">Versão 0.1.3. Requer internet; as estações e sua disponibilidade são de terceiros. Não é um receptor de FM do aparelho.</p><div class="availability-box"><strong>Lançamento em preparação</strong><p>O app já existe. Preço e distribuição pública ainda não estão definidos.</p><a class="text-link" href="mailto:contato@kolja.com.br?subject=Interesse%20no%20Retroradio">Perguntar sobre o Retroradio <span aria-hidden="true">↗</span></a></div></div>
       </article>
     </div>
   </section>
 
-  <section class="wrap till" aria-labelledby="till-title">
-    <div class="till__side">
-      <div class="head"><h2 id="till-title">Como comprar</h2></div>
-      <p class="if-manual">Por enquanto a compra é feita por e-mail, e cada pedido é atendido por uma pessoa. Pode demorar um pouco, mas o código chega.</p>
-      <p class="marker if-manual">PIX automático em breve, direto nesta página, com o código chegando sozinho.</p>
-      <p class="if-pix">Você paga com PIX aqui mesmo na página. Assim que o pagamento cai, o código de licença aparece na tela e vai para o seu e-mail.</p>
-      <p class="marker if-pix">Sem esperar ninguém: pagou, chegou.</p>
-    </div>
-    <div class="receipt">
-      <div class="receipt__top"><b>KÖLJA STORE</b><span>Cartuchos para a Retrotv</span></div>
-      <ol>
-        <li class="if-manual"><span>01</span><div><b>Peça o jogo</b><p>Toque em Comprar e mande o pedido para <a href="mailto:contato@kolja.com.br">contato@kolja.com.br</a>. A gente responde com a chave PIX.</p></div></li>
-        <li class="if-manual"><span>02</span><div><b>Pague com PIX</b><p>Pague pelo app do seu banco. Assim que o pagamento cair, o código de licença vai para o seu e-mail.</p></div></li>
-        <li class="if-pix"><span>01</span><div><b>Toque em Comprar</b><p>Escreva seu nome e e-mail. A página mostra o QR code e o PIX copia e cola.</p></div></li>
-        <li class="if-pix"><span>02</span><div><b>Pague com PIX</b><p>Pague pelo app do seu banco. Em segundos o código aparece na tela e chega no seu e-mail.</p></div></li>
-        <li><span>03</span><div><b>Jogue</b><p>Cole o código em <kbd>MENU › JOGOS › TENHO UM CÓDIGO</kbd>. Depois disso o jogo funciona até sem internet.</p></div></li>
-      </ol>
-      <div class="receipt__end"><span>Sem assinatura</span><span>É seu para sempre</span></div>
-      <div class="stamp if-manual">PIX automático<small>em breve</small></div>
-      <div class="stamp if-pix">PIX automático<small>código na hora</small></div>
-    </div>
+  <section class="system-section" id="sistemas" aria-labelledby="systems-title">
+    <div class="section-heading"><h2 id="systems-title">O próximo território.</h2><p>Sistemas em construção.</p></div>
+    <article class="os-product" id="kolja-os">
+      <div class="os-image"><a href="media/kolja-os-desktop.jpg" aria-label="Ampliar captura real de Kölja OS"><img src="media/kolja-os-desktop.jpg" alt="Desktop real do Kölja OS na máquina virtual: arquivos, terminal, navegador, loja, notas e dock" width="1440" height="900" loading="lazy"></a><p>Captura da versão experimental em máquina virtual.</p></div>
+      <div class="os-copy"><p class="product-kind">Experimental · v0.2.2</p><h3>Kölja OS</h3><p>Uma área de trabalho própria para abrir apps, organizar arquivos e explorar. Interface em HTML e JavaScript sobre Debian 13 ARM64, com host WebKitGTK.</p><p class="requirements">Alvo atual: máquina virtual UTM em Apple Silicon. Há também uma versão de desenvolvimento para macOS 13+ em ARM64. Não é uma ISO universal para PCs.</p><div class="availability-box"><strong>Ainda não está à venda</strong><p>Versão experimental, sem download público nesta loja. Empacotamento e testes de distribuição vêm antes do lançamento.</p><a class="text-link" href="mailto:contato@kolja.com.br?subject=Interesse%20no%20K%C3%B6lja%20OS">Conversar sobre Kölja OS <span aria-hidden="true">↗</span></a></div></div>
+    </article>
   </section>
 
-  <section class="wrap counter" aria-labelledby="faq-title">
-    <div class="counter__top" aria-hidden="true"></div>
-    <div class="counter__body">
-      <div>
-        <h2 id="faq-title">Perguntas no balcão</h2>
-        <p>Não achou a sua? Escreva para <a href="mailto:contato@kolja.com.br">contato@kolja.com.br</a>.</p>
-      </div>
-      <div class="faq">
-        <details id="retrotv"><summary>Como consigo a Retrotv?</summary><p>A Retrotv é um app para Android e está em acesso antecipado, ainda fora das lojas de apps. Escreva para <a href="mailto:contato@kolja.com.br?subject=Quero%20a%20Retrotv">contato@kolja.com.br</a> e a gente manda o link para baixar. O Tijolinho já vem dentro dela, de graça: é só abrir MENU › JOGOS.</p></details>
-        <details><summary>Preciso de internet para jogar?</summary><p>Só para baixar a Retrotv e receber o código. O código é conferido dentro do próprio celular, então depois de destravado o jogo funciona offline.</p></details>
-        <details><summary>Posso jogar em outro celular?</summary><p>Pode. O código é seu, não do aparelho. Cole o mesmo código na Retrotv do outro celular.</p></details>
-        <details><summary>Como jogo no computador?</summary><p>Na Retrotv, toque em NO PC e abra o endereço que aparece no computador, no mesmo Wi-Fi. Depois escolha o jogo em MENU › JOGOS: ele abre na tela do computador e o celular vira o controle, com direcional, A, B e START. O teclado do computador também funciona.</p></details>
-        <details><summary>Perdi o código. E agora?</summary><p>Procure o e-mail com o código, ou responda a ele, e a gente manda o código de novo.</p></details>
-        <details><summary>E se eu me arrepender?</summary><p>Você tem 7 dias para desistir da compra, como manda o Código de Defesa do Consumidor (art. 49). É só responder ao e-mail da compra.</p></details>
-      </div>
+  <section class="help-section" id="ajuda" aria-labelledby="help-title">
+    <div class="help-intro"><h2 id="help-title">Antes de dar play.</h2><p>O que você precisa saber para comprar e começar.</p><a class="text-link" href="mailto:contato@kolja.com.br">Falar com a Kölja <span aria-hidden="true">↗</span></a></div>
+    <div class="faq">
+      <details id="retrotv"><summary>Preciso ter a Retrotv?</summary><p>Sim, para Cobrinha, Tijolinho e Mal da Serra. São jogos dentro da Retrotv, não aplicativos independentes. Confira se o jogo aparece em MENU › JOGOS antes de comprar a licença. Mal da Serra precisa da versão 0.2.3 ou posterior.</p><p>A Retrotv é de uso pessoal e não está à venda nem disponível para download nesta loja. Se você ainda não tem o aplicativo e o jogo, não compre a licença.</p></details>
+      <details id="como-jogar"><summary>Como experimento o Tijolinho?</summary><p>Se você já tem a Retrotv 0.2 ou posterior, abra MENU › JOGOS › TIJOLINHO. Ele já vem incluído e não precisa de código pago. Não há download separado nesta página.</p></details>
+      <details><summary>Como funciona a compra com PIX?</summary><p>Confirme que já tem o jogo compatível, informe nome e e-mail e gere o PIX. Pague no app do seu banco. Após a confirmação, a licença aparece aqui na tela. Copie e guarde o código: o envio automático por e-mail ainda não está ativo.</p><p>A compra é processada pelo Mercado Pago. O e-mail informado identifica o pedido para atendimento; nenhum cadastro ou assinatura é necessário.</p></details>
+      <details><summary>Como ativo e guardo minha licença?</summary><p>Cole o código em MENU › JOGOS › TENHO UM CÓDIGO. Os jogos desbloqueados funcionam offline. A licença não fica presa a um aparelho, mas é necessário ter o aplicativo e o jogo compatíveis no outro celular.</p><p>Você pode reabrir Comprar no mesmo navegador para recuperar um pedido salvo. Se os dados do navegador forem apagados, escreva para <a href="mailto:contato@kolja.com.br">contato@kolja.com.br</a> com o e-mail da compra e o comprovante.</p></details>
+      <details><summary>E se eu precisar de ajuda ou reembolso?</summary><p>Escreva para <a href="mailto:contato@kolja.com.br?subject=Ajuda%20com%20pedido%20K%C3%B6lja%20Store">contato@kolja.com.br</a> com o jogo, o e-mail usado e o comprovante. A loja aceita pedidos de desistência em até 7 dias da compra. Não envie senhas ou dados bancários.</p></details>
+      <details><summary>O que acontece com meus dados?</summary><p>Nome, e-mail e dados do pedido são usados para processar a compra e prestar atendimento. O pagamento passa pelo Mercado Pago. Este navegador guarda o pedido e a licença para permitir reabrir a compra; evite comprar em aparelhos compartilhados. Para dúvidas sobre seus dados, fale com contato@kolja.com.br.</p></details>
     </div>
   </section>
 </main>
-
-<footer>
-  <div class="shutter">
-    <p>Pedidos, dúvidas e recados:</p>
-    <a href="mailto:contato@kolja.com.br">contato@kolja.com.br</a>
-  </div>
-  <div class="fine"><span class="label">© 2026 Kölja</span><a class="label" href="../games/">Kölja Games</a></div>
-</footer>
+<footer class="site-footer"><a class="wordmark" href="./">KÖLJA<span>STORE</span></a><p>Apps, jogos e outros mundos.</p><a href="mailto:contato@kolja.com.br">contato@kolja.com.br</a><span>© 2026 Kölja</span></footer>
+<noscript><p class="noscript">O PIX nesta página precisa de JavaScript. Para atendimento, escreva para <a href="mailto:contato@kolja.com.br">contato@kolja.com.br</a>.</p></noscript>
 
 <dialog class="order" id="pix" aria-labelledby="pix-title">
   <form method="dialog" class="order__in" novalidate>
-    <span class="label">Kölja Store · pedido</span>
-    <h3 id="pix-title">Cobrinha</h3>
-
-    <div data-step="manual">
-      <p>O PIX automático ainda não está ligado, então por enquanto a compra é feita por e-mail. Mande o pedido para <b>contato@kolja.com.br</b> com o nome do jogo. A gente responde com a chave PIX e, quando o pagamento cair, manda o seu código de licença.</p>
-      <a class="btn-tag" id="pix-mail" href="mailto:contato@kolja.com.br">Escrever o pedido</a>
-      <p class="order__note">Nada é cobrado nesta página. Em breve: PIX automático, com o código chegando sozinho.</p>
-    </div>
-
+    <p class="product-kind">Kölja Store · Pedido</p><h2 id="pix-title">Seu jogo</h2>
+    <div data-step="manual" hidden><p>O checkout não está disponível agora. Escreva para contato@kolja.com.br para receber atendimento antes de pagar.</p><a class="button" id="pix-mail" href="mailto:contato@kolja.com.br">Pedir atendimento</a></div>
     <div data-step="form" hidden>
-      <p>O código de licença aparece aqui na tela assim que o PIX cair, e também vai para o seu e-mail.</p>
+      <p>Você está comprando uma <strong>licença para o jogo já instalado</strong>. O código aparece nesta tela após a confirmação do pagamento. Copie e guarde: não há envio automático por e-mail.</p>
+      <p class="requirements" id="pix-requires"></p>
+      <label class="confirm"><input type="checkbox" id="pix-compatible"><span>Já tenho a Retrotv compatível e este jogo aparece em MENU › JOGOS.</span></label>
       <label class="field"><span>Seu nome</span><input id="pix-name" name="name" autocomplete="name" maxlength="60" required></label>
-      <label class="field"><span>Seu e-mail</span><input id="pix-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="120" required></label>
-      <button class="btn-tag" id="pix-go" value="go">Pagar com PIX</button>
+      <label class="field"><span>Seu e-mail</span><input id="pix-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="120" required><small>Para identificar o pedido e receber atendimento.</small></label>
+      <button class="button" id="pix-go" value="go">Gerar PIX</button>
       <p class="order__err" id="pix-err" role="alert" hidden></p>
-      <p class="order__note">Pagamento pelo Mercado Pago. Você paga uma vez e o jogo é seu para sempre, em qualquer celular com a Retrotv.</p>
+      <p class="order__note">Pagamento único pelo Mercado Pago. Abrir este pedido não realiza o pagamento.</p>
     </div>
-
     <div data-step="pay" hidden>
-      <p>Abra o app do seu banco, escolha PIX e leia o QR code. No celular, copie o código abaixo e use o PIX copia e cola.</p>
+      <p>Abra o app do seu banco e leia o QR code, ou copie o código e use o PIX copia e cola.</p>
       <img class="qr" id="pix-qr" alt="QR code do PIX" hidden>
-      <a class="btn-tag btn-tag--leaf" id="pix-ticket" target="_blank" rel="noopener" hidden>Ver o QR code no Mercado Pago</a>
-      <div class="copyrow"><input id="pix-code" readonly aria-label="PIX copia e cola"><button type="button" class="btn-tag btn-tag--ink" data-copy="pix-code">Copiar</button></div>
-      <p class="order__wait" aria-live="polite"><span class="blink" aria-hidden="true"></span><span id="pix-wait">Esperando o pagamento</span><b id="pix-timer"></b></p>
-      <p class="order__note">Pode deixar esta janela aberta: quando o PIX cair, o código aparece aqui sozinho. Se fechar, é só tocar em Comprar de novo neste aparelho, ou esperar o e-mail.</p>
+      <a class="button button-outline" id="pix-ticket" target="_blank" rel="noopener" hidden>Ver QR code no Mercado Pago</a>
+      <div class="copyrow"><input id="pix-code" readonly aria-label="PIX copia e cola"><button type="button" class="button button-outline" data-copy="pix-code">Copiar PIX</button></div>
+      <p class="order__wait" aria-live="polite"><span id="pix-wait">Esperando confirmação do pagamento</span><b id="pix-timer"></b></p>
+      <p class="order__note">Mantenha esta janela aberta. Se fechar, toque em Comprar de novo no mesmo navegador para retomar. A licença aparece aqui após a confirmação; guarde seu comprovante.</p>
     </div>
-
     <div data-step="done" hidden>
-      <p class="order__paid">Pago! O jogo é seu.</p>
-      <p id="pix-sent">Este é o seu código de licença. Uma cópia foi para <b id="pix-to"></b>.</p>
+      <p class="order__paid" role="status">Pagamento confirmado.</p><p id="pix-sent">Copie e guarde sua licença.</p>
       <textarea id="pix-lic" readonly aria-label="Código de licença"></textarea>
-      <div class="order__row">
-        <button type="button" class="btn-tag btn-tag--ink" data-copy="pix-lic">Copiar código</button>
-        <a class="btn-tag" id="pix-open" href="#">Abrir na Retrotv</a>
-      </div>
-      <p class="order__note">No celular que tem a Retrotv, toque em Abrir na Retrotv. Ou cole o código em MENU › JOGOS › TENHO UM CÓDIGO.<span id="pix-keep"> Guarde o e-mail: o código vale para sempre.</span></p>
+      <div class="order__row"><button type="button" class="button button-outline" data-copy="pix-lic">Copiar licença</button><a class="button" id="pix-open" href="#">Abrir na Retrotv</a></div>
+      <p class="order__note">Ou cole o código em MENU › JOGOS › TENHO UM CÓDIGO.<span id="pix-keep" hidden> Uma cópia também foi enviada por e-mail.</span></p>
     </div>
-
-    <div data-step="expired" hidden>
-      <p>Este PIX expirou antes do pagamento, então nada foi cobrado. Se você já pagou, espere o e-mail ou escreva para <a href="mailto:contato@kolja.com.br">contato@kolja.com.br</a>.</p>
-      <button type="button" class="btn-tag" id="pix-again">Gerar outro PIX</button>
-    </div>
-
-    <button class="order__close" value="cancel">Fechar</button>
+    <div data-step="expired" hidden><p>Este pedido expirou ou não está disponível. Se você já pagou, não pague de novo: envie seu comprovante para <a href="mailto:contato@kolja.com.br">contato@kolja.com.br</a>.</p><button type="button" class="button" id="pix-again">Voltar ao pedido</button></div>
+    <button class="order__close" value="cancel" formnovalidate>Fechar</button>
   </form>
 </dialog>
-
-<script>
-  // Compra com PIX automático pelo servidor da loja (tools/store/worker na retrofone-spinoffs).
-  // Com STORE_API vazio, Comprar continua sendo o pedido por e-mail. Sem JS, o botão já é um mailto.
-  const STORE_API = 'https://kolja-store.kolja-store-worker.workers.dev';
-  const local = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
-  const api = (local && new URLSearchParams(location.search).get('api')) || STORE_API;
-  if (api) document.documentElement.classList.add('pix-on');
-
-  const dlg = document.getElementById('pix'), $ = id => document.getElementById(id);
-  const ERR = {
-    bad_name: 'Escreva o seu nome.', bad_email: 'Confira o e-mail: é para ele que o código vai.',
-    too_many: 'Muitos pedidos seguidos daqui. Espere alguns minutos e tente de novo.',
-    provider: 'O Mercado Pago não respondeu agora. Tente de novo em instantes.',
-  };
-  let game = null, poll = null, tick = null;
-  const step = s => dlg.querySelectorAll('[data-step]').forEach(d => d.hidden = d.dataset.step !== s);
-  const saved = g => { try { return JSON.parse(localStorage.getItem('kstore:' + g)) } catch { return null } };
-  const save = (g, o) => { try { o ? localStorage.setItem('kstore:' + g, JSON.stringify(o)) : localStorage.removeItem('kstore:' + g) } catch {} };
-  const stop = () => { clearTimeout(poll); clearInterval(tick); poll = tick = null; };
-
-  function showPay(o) {
-    step('pay');
-    $('pix-code').value = o.copia_e_cola;
-    $('pix-qr').hidden = !o.qr_base64;
-    if (o.qr_base64) $('pix-qr').src = 'data:image/png;base64,' + o.qr_base64;
-    $('pix-ticket').hidden = !!o.qr_base64 || !o.ticket_url;
-    if (o.ticket_url) $('pix-ticket').href = o.ticket_url;
-    const left = () => {
-      const s = Math.max(0, o.expires - Math.floor(Date.now() / 1000));
-      $('pix-timer').textContent = String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
-    };
-    left(); clearInterval(tick); tick = setInterval(left, 1000);
-    watch(o);
-  }
-  function showDone(o) {
-    stop(); step('done');
-    $('pix-lic').value = o.license;
-    $('pix-open').href = o.link;
-    // mail === false: the Worker has no e-mail sender yet, so don't promise a copy.
-    const sent = $('pix-sent'), to = document.createElement('b');
-    to.textContent = o.email || 'o seu e-mail';
-    if (o.mail === false) sent.textContent = 'Este é o seu código de licença. Copie e guarde num lugar seguro: ele vale para sempre.';
-    else { sent.textContent = 'Este é o seu código de licença. Uma cópia foi para '; sent.append(to, '.'); }
-    $('pix-keep').hidden = o.mail === false;
-  }
-  function watch(o) {
-    clearTimeout(poll);
-    poll = setTimeout(async () => {
-      if (!dlg.open) return;
-      try {
-        const r = await fetch(api + '/order/' + o.order, { cache: 'no-store' });
-        if (r.status === 404) { save(game, null); return step('expired'); }
-        const s = await r.json();
-        if (s.status === 'paid') { save(game, { ...o, ...s }); return showDone({ ...o, ...s }); }
-        if (s.status === 'expired' || o.expires < Date.now() / 1000 - 60) { save(game, null); stop(); return step('expired'); }
-      } catch {}
-      watch(o);
-    }, document.hidden ? 8000 : 3000);
-  }
-  async function order() {
-    const err = $('pix-err'), btn = $('pix-go');
-    err.hidden = true;
-    const name = $('pix-name').value.trim(), email = $('pix-email').value.trim();
-    if (name.length < 2) { err.textContent = ERR.bad_name; err.hidden = false; return $('pix-name').focus(); }
-    if (!$('pix-email').checkValidity() || !email.includes('.')) { err.textContent = ERR.bad_email; err.hidden = false; return $('pix-email').focus(); }
-    btn.disabled = true; btn.textContent = 'Gerando o PIX…';
-    try {
-      const r = await fetch(api + '/order', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ game, name, email }) });
-      const o = await r.json();
-      if (!r.ok) throw new Error(o.error);
-      o.email = email;
-      try { localStorage.setItem('kstore:buyer', JSON.stringify({ name, email })) } catch {}
-      save(game, o);
-      showPay(o);
-    } catch (e) {
-      err.textContent = ERR[e.message] || 'Não deu para gerar o PIX agora. Tente de novo, ou escreva para contato@kolja.com.br.';
-      err.hidden = false;
-    } finally { btn.disabled = false; btn.textContent = 'Pagar com PIX'; }
-  }
-
-  document.querySelectorAll('[data-buy]').forEach(b => b.addEventListener('click', e => {
-    if (!dlg.showModal) return;
-    e.preventDefault();
-    game = b.dataset.buy;
-    $('pix-title').textContent = b.dataset.name + ' · ' + b.dataset.price;
-    $('pix-mail').href = b.href;
-    stop();
-    if (!api) step('manual');
-    else {
-      const o = saved(game);
-      if (o && o.status === 'paid') showDone(o);
-      else if (o && o.expires > Date.now() / 1000) showPay(o);
-      else {
-        save(game, null);
-        let who = {}; try { who = JSON.parse(localStorage.getItem('kstore:buyer')) || {} } catch {}
-        if (who.name && !$('pix-name').value) $('pix-name').value = who.name;
-        if (who.email && !$('pix-email').value) $('pix-email').value = who.email;
-        $('pix-err').hidden = true;
-        step('form');
-      }
-    }
-    dlg.showModal();
-  }));
-  dlg.querySelector('form').addEventListener('submit', e => {
-    if (e.submitter && e.submitter.value === 'cancel') return;
-    e.preventDefault();
-    if (!dlg.querySelector('[data-step=form]').hidden) order();
-  });
-  dlg.addEventListener('close', stop);
-  $('pix-again').addEventListener('click', () => { save(game, null); step('form'); });
-  dlg.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', async () => {
-    const f = $(b.dataset.copy), was = b.textContent;
-    f.select();
-    try { await navigator.clipboard.writeText(f.value) } catch { document.execCommand('copy') }
-    b.textContent = 'Copiado!'; setTimeout(() => b.textContent = was, 1600);
-  }));
-
-  // Quem chega por #retrotv vê a resposta aberta.
-  const openHash = () => { const d = location.hash && document.querySelector('details' + location.hash); if (d) d.open = true; };
-  addEventListener('hashchange', openHash); openHash();
-
-  // A TV-14 troca de canal sozinha: chiado rápido, outro jogo, o visor acompanha.
-  const glass = document.getElementById('glass'), shows = [...glass.querySelectorAll('[data-name]')];
-  const lcdName = document.getElementById('lcd-name'), lcdSub = document.getElementById('lcd-sub'), dial = document.getElementById('dial');
-  let ch = 0;
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => {
-    if (document.hidden) return;
-    glass.classList.add('zap');
-    setTimeout(() => {
-      shows[ch].classList.remove('on');
-      ch = (ch + 1) % shows.length;
-      shows[ch].classList.add('on');
-      lcdName.textContent = shows[ch].dataset.name.toUpperCase();
-      lcdSub.textContent = shows[ch].dataset.sub.toUpperCase();
-      dial.style.transform = 'rotate(' + ch * 40 + 'deg)';
-      glass.classList.remove('zap');
-    }, 220);
-  }, 4200);
-</script>
 </body>
 </html>
