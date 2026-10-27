@@ -23,3 +23,9 @@ section and the nav both lead to the label.
 
 `games/` was copied from `~/Documents/Developer/kolja-games-site` (whose README lists every media source); this repo is
 the copy to edit.
+
+## Product distribution policy
+
+**NO FREE PRODUCT DOWNLOADS** (owner decision, 2026-10-27). Commercial apps, games, OS/VM images, packages and licenses must require server-verified payment for the correct order/product. No free/demo/trial/PWYW-with-skip offer without specific new owner approval. Keep product binaries in private storage; do not publish them in this Pages repository or public GitHub releases. Images, storefront scripts and normal previews remain public.
+
+If payment authorization or lawful redistribution is not ready, disable delivery and checkout together. Preserve required third-party notices and source availability obligations; do not use secrecy to override open-source licenses. Retrotv remains personal use only. Kölja OS and Tijolinho are unavailable pending compliant paid delivery. Production verification must cover copied/old URLs and CDN caches, not only hidden buttons.
