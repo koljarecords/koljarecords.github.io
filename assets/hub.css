@@ -317,3 +317,5 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
   html { scroll-behavior: auto; }
 }
+.tv__link + .tv__link { margin-top: 14px; }
+@media (max-width: 460px) { .top__nav .nav-app { display: none; } }

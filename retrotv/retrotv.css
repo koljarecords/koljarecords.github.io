@@ -1,0 +1,54 @@
+/* Retrotv page: the store's base, warmed up with the set's own wood and amber. */
+.rtv{--wood:#5a3a1f;--wood-2:#3b2614;--amber:#ffb340;--cream:#efe2c0;--acid:#ffb340}
+.rtv .wordmark span{color:var(--amber)}
+.rtv .button{background:var(--amber);border-color:var(--amber);color:#1c130a}
+.rtv .button:hover{background:#ffc766}
+
+.rtv-hero{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,80px);align-items:center;padding:clamp(40px,6vw,88px) var(--gutter) clamp(32px,4vw,56px);background:linear-gradient(160deg,var(--wood) 0%,var(--wood-2) 70%)}
+.rtv-hero h1{font-size:clamp(64px,9vw,132px);letter-spacing:-.02em;text-transform:uppercase;margin-bottom:22px}
+.rtv-hero .catalog-label{color:var(--amber)}
+.rtv-hero p{font-size:16px;line-height:1.7;color:#f1e7d3;margin-bottom:16px}
+.rtv-hero p.rtv-lede{font-size:clamp(19px,1.8vw,23px);line-height:1.45;color:var(--text)}
+.rtv-cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;margin-top:30px}
+.rtv-download{min-height:60px;padding:16px 28px;font-size:17px}
+.rtv-hero p.rtv-cta__note{margin:0;font:500 12px/1.7 var(--mono);color:var(--cream)}
+.rtv-hero__shot{justify-self:center;width:min(100%,380px)}
+.rtv-hero__shot img,.rtv-shots img{border-radius:22px;box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08)}
+
+.rtv-shots{max-width:var(--max);margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,48px);padding:clamp(48px,6vw,88px) var(--gutter)}
+.rtv-shots figure{max-width:320px;justify-self:center}
+.rtv-shots figcaption{margin-top:14px;font:500 12px/1.6 var(--mono);color:var(--muted)}
+
+.rtv-plans,.rtv-install{max-width:var(--max);margin:auto;padding:clamp(48px,6vw,88px) var(--gutter);border-top:1px solid var(--line)}
+.rtv-plans__intro{font-size:17px;line-height:1.7;margin-bottom:30px}
+.rtv-plan-grid{display:grid;grid-template-columns:repeat(2,minmax(0,340px));gap:18px;margin-bottom:26px}
+.rtv-plan{background:var(--cream);color:#2a1d10;border:2px dashed #6b4a2a;border-radius:8px;padding:22px 24px;display:grid;gap:4px}
+.rtv-plan .product-kind{color:#5c4128;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:0}
+.rtv-plan strong{font:800 clamp(40px,4vw,52px)/1 var(--display)}
+.rtv-plan span{font:500 12px/1.6 var(--mono);color:#5c4128}
+.rtv-terms{margin-top:22px;padding:16px 20px;border-left:3px solid var(--amber);background:var(--surface);font-size:14px;line-height:1.65;color:#d9dcd3}
+
+.rtv-install{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(32px,5vw,80px);align-items:start}
+.rtv-steps{margin:0 0 30px;padding:0;list-style:none;counter-reset:s;display:grid;gap:16px}
+.rtv-steps li{counter-increment:s;position:relative;padding:5px 0 0 54px;min-height:36px;font-size:16px;line-height:1.6;max-width:62ch}
+.rtv-steps li::before{content:counter(s);position:absolute;left:0;top:0;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--surface);border:1px solid var(--line);color:var(--amber);font:600 15px/1 var(--mono)}
+.rtv-specs{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:26px}
+.rtv-specs h3{font-size:24px;margin:0 0 8px}
+.rtv-specs h3+p{margin-bottom:22px}
+.rtv-specs p{font-size:14px;line-height:1.65;color:#d9dcd3}
+.rtv-hash{margin-top:4px;display:grid;gap:6px}
+.rtv-hash span{font:500 11px/1 var(--mono);color:var(--muted)}
+.rtv-hash code{font:500 12px/1.55 var(--mono);word-break:break-all;color:var(--text);user-select:all}
+.rtv .site-footer p a{color:inherit}
+
+@media (max-width:860px){
+  .rtv-hero{grid-template-columns:1fr}
+  .rtv-hero__shot{width:min(78%,340px)}
+  .rtv-shots{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:20px;padding-inline:20px;scrollbar-width:none}
+  .rtv-shots figure{flex:0 0 68%;max-width:300px;scroll-snap-align:center}
+  .rtv-install{grid-template-columns:1fr}
+  .rtv-plan-grid{grid-template-columns:1fr}
+  .rtv-download{width:100%}
+}
+@media (max-width:560px){.rtv .wordmark{font-size:30px}}
+@media (max-width:760px){.rtv .site-footer p{flex-basis:100%;order:3}}
