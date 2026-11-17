@@ -2,10 +2,10 @@ Anderson Silva
 Engenheiro de IA · TypeScript / Node.js · Sistemas em tempo real e multiplayer
 São Paulo, Brasil (UTC−3) · Disponível para trabalho remoto · anderson@kolja.com.br · kolja.com.br/portfolio · linkedin.com/in/oriontis
 RESUMO
-Engenheiro de software desde 2010, com foco em IA, backend e sistemas em tempo real. Projeto arquiteturas e dirijo a implementação
-com agentes de programação, testes automatizados e validação prática. Crio jogos, aplicativos e ferramentas locais.
+Engenheiro de software desde 2010, com foco em IA, backend e sistemas em tempo real. Projeto arquiteturas e desenvolvo em
+colaboração com Kaia, com testes automatizados e validação prática. Crio jogos, aplicativos e ferramentas locais.
 COMPETÊNCIAS
-AI & LLM: orquestração multiagente, programação com agentes, roteamento multimodelo, LLMs locais, testes adversariais
+AI & LLM: orquestração multiagente, colaboração com IA, roteamento multimodelo, LLMs locais, testes adversariais
 Backend: TypeScript, Node.js, Python, PostgreSQL / Supabase, Convex, SQLite, JSON-RPC, SSE, APIs REST
 Segurança e identidade: OIDC / SSO, passkeys / WebAuthn, JWS / JWKS, X25519, AES-GCM, HKDF, DTLS
 Jogos e gráficos: Godot 4 (GDScript), Jolt physics, rede com servidor autoritativo, Three.js, WebGL / GLSL, Metal / MetalFX
@@ -58,7 +58,7 @@ conector Kaia. Contribuições integradas ao repositório do produto colaborativ
 App Android em Flutter/Dart com medição GPS, rotas internas, instruções por voz e Pix; gerador local em Python/SQLite/ReportLab
 com prévia, PDF, histórico de emissões e backup.
 •
-Criação e direção técnica com agentes de IA: luta 3D com nove personagens e física; campanha tática de fã com dublagem própria;
+Criação e desenvolvimento colaborativo: luta 3D com nove personagens e física; campanha tática de fã com dublagem própria;
 navegação a vela e multiplayer com servidor autoritativo.
 •
 C, x86/ARM64, IPC por capacidades, drivers e rede em processos de usuário; sistema em RAM com cofre criptografado, desktop,

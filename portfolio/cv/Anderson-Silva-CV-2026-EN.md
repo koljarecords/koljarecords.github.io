@@ -2,10 +2,11 @@ Anderson Silva
 AI Engineer · TypeScript / Node.js · Real-time & Multiplayer Systems
 São Paulo, Brazil (UTC−3) · Open to remote work worldwide · anderson@kolja.com.br · kolja.com.br/portfolio · linkedin.com/in/oriontis
 SUMMARY
-Software engineer since 2010, focused on AI, backend and real-time systems. I design architectures and direct implementation with
-AI coding agents, automated tests and practical validation. I create games, applications and local tools.
+Software engineer since 2010, focused on AI, backend and real-time systems. I design architectures and develop in collaboration with
+Kaia, with automated tests and practical validation. I create games, applications and local tools.
 SKILLS
-AI & LLM: multi-agent orchestration, agentic coding workflows, provider-agnostic multi-model routing, local LLMs, adversarial testing
+AI & LLM: multi-agent orchestration, human and AI collaboration, provider-agnostic multi-model routing, local LLMs, adversarial
+testing
 Backend: TypeScript, Node.js, Python, PostgreSQL / Supabase, Convex, SQLite, JSON-RPC, SSE, REST APIs
 Security & identity: OIDC / SSO, passkeys / WebAuthn, JWS / JWKS, X25519, AES-GCM, HKDF, DTLS
 Games & graphics: Godot 4 (GDScript), Jolt physics, server-authoritative networking, Three.js, WebGL / GLSL, Metal / MetalFX
@@ -56,8 +57,8 @@ connector. Contributions merged into the collaborative product repository.
 Flutter/Dart Android app with GPS metering, in-app routes, spoken directions and Pix; local Python/SQLite/ReportLab generator
 with previews, PDFs, issuance history and backup.
 •
-Creation and technical direction with AI coding agents: nine-character 3D fighting and physics; a fan-made tactics campaign with
-original voice performances; sailing simulation and server-authoritative multiplayer.
+Collaborative creation and development: nine-character 3D fighting and physics; a fan-made tactics campaign with original voice
+performances; sailing simulation and server-authoritative multiplayer.
 •
 C, x86/ARM64, capability-based IPC, user-space drivers and networking; RAM-based system with an encrypted vault, desktop,
 browser and IDE for its own language.
